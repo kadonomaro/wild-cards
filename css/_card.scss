@@ -15,15 +15,40 @@
         width: 90px;
         height: 135px;
         padding: 3px;
-        border: 2px dashed #303030;
+        border: 2px dashed rgba($color: #303030, $alpha: 0.3);
         border-radius: 5px;
-        transition: background-color 0.3s ease-in;
+        transition: background-color 0.3s ease-in, transform 0.7s ease-in;
+        transform-origin: top;
         &:not(:last-child){
             margin-right: 10px;
         }
     }
     &__slot--hovered {
         background-color: #cccccc;
+    }
+    &__slot--game-active {
+        border-color: transparent;
+        &:first-child {
+            transform: translateY(30%) rotate(-25deg);
+        }
+        &:nth-child(2) {
+            transform: translateY(6%) rotate(-15deg);
+        }
+        &:nth-child(3){
+            transform: translateY(-3%) rotate(-5deg);
+        }
+        &:nth-child(4){
+            transform: translateY(-3%) rotate(5deg);
+        }
+        &:nth-child(5) {
+            transform: translateY(6%) rotate(15deg);
+        }
+        &:last-child {
+            transform: translateY(30%) rotate(25deg);
+        }
+        &:not(:last-child){
+            margin-right: 0;
+        }
     }
 }
 

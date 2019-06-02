@@ -40,10 +40,14 @@
   width: 90px;
   height: 135px;
   padding: 3px;
-  border: 2px dashed #303030;
+  border: 2px dashed rgba(48, 48, 48, 0.3);
   border-radius: 5px;
-  -webkit-transition: background-color 0.3s ease-in;
-  transition: background-color 0.3s ease-in;
+  -webkit-transition: background-color 0.3s ease-in, -webkit-transform 0.7s ease-in;
+  transition: background-color 0.3s ease-in, -webkit-transform 0.7s ease-in;
+  transition: background-color 0.3s ease-in, transform 0.7s ease-in;
+  transition: background-color 0.3s ease-in, transform 0.7s ease-in, -webkit-transform 0.7s ease-in;
+  -webkit-transform-origin: top;
+          transform-origin: top;
 }
 
 .card-deck__slot:not(:last-child) {
@@ -52,6 +56,44 @@
 
 .card-deck__slot--hovered {
   background-color: #cccccc;
+}
+
+.card-deck__slot--game-active {
+  border-color: transparent;
+}
+
+.card-deck__slot--game-active:first-child {
+  -webkit-transform: translateY(30%) rotate(-25deg);
+          transform: translateY(30%) rotate(-25deg);
+}
+
+.card-deck__slot--game-active:nth-child(2) {
+  -webkit-transform: translateY(6%) rotate(-15deg);
+          transform: translateY(6%) rotate(-15deg);
+}
+
+.card-deck__slot--game-active:nth-child(3) {
+  -webkit-transform: translateY(-3%) rotate(-5deg);
+          transform: translateY(-3%) rotate(-5deg);
+}
+
+.card-deck__slot--game-active:nth-child(4) {
+  -webkit-transform: translateY(-3%) rotate(5deg);
+          transform: translateY(-3%) rotate(5deg);
+}
+
+.card-deck__slot--game-active:nth-child(5) {
+  -webkit-transform: translateY(6%) rotate(15deg);
+          transform: translateY(6%) rotate(15deg);
+}
+
+.card-deck__slot--game-active:last-child {
+  -webkit-transform: translateY(30%) rotate(25deg);
+          transform: translateY(30%) rotate(25deg);
+}
+
+.card-deck__slot--game-active:not(:last-child) {
+  margin-right: 0;
 }
 
 .card-shop {

@@ -1,55 +1,28 @@
+import drag from "./drag.js";
 import randomCards from "./randomCards.js";
 
-// import drag from "./drag.js";
-
 document.addEventListener('DOMContentLoaded', function () {
+
+    let playButton = document.querySelector('.play');
+
+    playButton.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        for (const slot of cardSlots) {
+            slot.classList.add('card-deck__slot--game-active');
+        }
+    });
 
     const cards = document.querySelectorAll('.js-card');
     const cardSlots = document.querySelectorAll('.js-card-slot');
 
-    let drag = {
 
-        currentCard: null,
-
-        start: function (card, cardHoldClass, cardInvisibleClass) {
-            card.classList.add(cardHoldClass);
-
-            setTimeout(() => {
-                if (card.classList.contains(cardHoldClass)) {
-                    card.classList.add(cardInvisibleClass);
-                }
-            }, 10);
-        },
-    
-        end: function (card, cardHoldClass, cardInvisibleClass) {
-            card.classList.remove(cardHoldClass);
-            card.classList.remove(cardInvisibleClass);
-        },
-    
-        over: function (evt) {
-            evt.preventDefault();
-        },
-    
-        enter: function (cardSlot, cardSlotHoveredClass) {
-            cardSlot.classList.add(cardSlotHoveredClass);
-        },
-    
-        leave: function (cardSlot, cardSlotHoveredClass) {
-            cardSlot.classList.remove(cardSlotHoveredClass);
-        },
-    
-        drop: function (card, cardSlot, cardSlotHoveredClass) {
-            cardSlot.classList.remove(cardSlotHoveredClass);
-            cardSlot.append(card);
-        }
-    };
+    randomCards.generate(cards);
 
 
     for (const card of cards) {
         card.addEventListener('dragstart',function () {
             drag.start(this, 'card--hold', 'card--invisible');
-            drag.currentCard = this;
-            
+         
         });
 
         card.addEventListener('dragend', function () {
@@ -60,6 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     for (const slot of cardSlots) {
+        slot.addEventListener('click', function () {
+            console.dir(this); 
+        });
 
         slot.addEventListener('dragover', function(evt){
             drag.over(evt);
@@ -77,8 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
     
-
-    randomCards.generate(cards);
 
 });
 

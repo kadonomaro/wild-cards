@@ -1,7 +1,8 @@
 let randomCards = {
 
     data: [
-        '#aca', '#bcc', '#ecf', '#4aa'
+        '#FF6347', '#2E8B57', '#4682B4',
+        '#FFE4C4', '#B8860B', '#BDB76B'
     ],
     random: function (min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
