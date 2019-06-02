@@ -10,7 +10,6 @@ let randomCards = {
     generate: function (cards) {
         cards.forEach(card => {
             card.style.backgroundColor = this.data[this.random(0, this.data.length - 1)];
-            console.log(this.data.length);
         });
     }
 };
