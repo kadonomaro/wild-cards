@@ -1,4 +1,32 @@
+.page {
+  margin: 0;
+  padding: 0;
+}
+
+.game {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (25vh)[3] 1fr;
+      grid-template-rows: repeat(3, 25vh) 1fr;
+      grid-template-areas: "card-table card-table card-table card-shop"  "card-table card-table card-table card-shop" "card-table card-table card-table card-shop" "card-deck card-deck card-deck card-shop";
+  padding: 20px;
+}
+
+.card-table {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: card-table;
+}
+
 .card-deck {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: card-deck;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -23,6 +51,15 @@
 
 .card-deck__slot--hovered {
   background-color: #cccccc;
+}
+
+.card-shop {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 4;
+  grid-area: card-shop;
+  max-height: calc(100vh - 40px);
+  overflow: auto;
 }
 
 .card {

@@ -4,13 +4,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const card = document.querySelector('.js-card');
     const cardSlots = document.querySelectorAll('.js-card-slot');
+
     let drag = {
 
-        start: function (cardHoldClass, cardInvisibleClass) {
-            this.classList.add('card--hold');
+        start: function (card, cardHoldClass, cardInvisibleClass) {
+            card.classList.add('card--hold');
+
             setTimeout(() => {
-                this.classList.add('card--invisible');
-            }, 0);
+                if (card.classList.contains('card--hold')) {
+                    card.classList.add('card--invisible');
+                }
+            }, 10);
         },
     
         end: function (cardHoldClass, cardInvisibleClass) {
@@ -39,8 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     
-    card.addEventListener('dragstart', drag.start);
+    // card.addEventListener('dragstart', drag.start);
     card.addEventListener('dragend', drag.end);
+
+    card.addEventListener('dragstart',function () {
+        drag.start(this); 
+    });
 
     for (const slot of cardSlots) {
         slot.addEventListener('dragover', drag.over);
