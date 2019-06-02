@@ -1,3 +1,5 @@
+import randomCards from "./randomCards.js";
+
 // import drag from "./drag.js";
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -42,8 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
 
-    
-    // card.addEventListener('dragstart', drag.start);
     card.addEventListener('dragend', drag.end);
 
     card.addEventListener('dragstart',function () {
@@ -57,6 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
         slot.addEventListener('drop', drag.drop);
     }
 
+    let cards = document.querySelectorAll('.js-card');
+    console.dir(cards);
+    
+    randomCards.generate(cards);
 
 
 });
