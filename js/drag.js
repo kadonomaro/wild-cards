@@ -1,5 +1,5 @@
 let drag = {
-
+    cardArray: [],
     currentCard: null,
 
     start: function (card, cardHoldClass, cardInvisibleClass) {
@@ -36,16 +36,19 @@ let drag = {
         if (cardSlot.children.length === 0) {
 
             cardSlot.append(card);
+            this.cardArray.push(card);
 
         } else if (cardSlot.children.length > 0) {
 
             if (cardSlot.previousElementSibling !== null && cardSlot.previousElementSibling.children.length === 0) {
 
                 cardSlot.previousElementSibling.append(card);
+                this.cardArray.push(card);
 
             } else if (cardSlot.nextElementSibling !== null && cardSlot.nextElementSibling.children.length === 0) {
 
                 cardSlot.nextElementSibling.append(card);
+                this.cardArray.push(card);
 
             }
         }

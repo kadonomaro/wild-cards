@@ -4,7 +4,8 @@
         "../image/cards/wolf.png", 
         "../image/cards/griffin.png", 
         "../image/cards/eagle.png",
-        "../image/cards/werewolf.png"
+        "../image/cards/werewolf.png",
+        "../image/cards/pegasus.png"
     ],
     "frontImage": [
         "../image/card-background-front.jpg", 

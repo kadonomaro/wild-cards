@@ -18,7 +18,11 @@
         height: 140px;
         background-image: url('../image/coins.png');
         background-size: contain;
+        pointer-events: none;
     }
+}
+.card-table--active {
+    margin-bottom: -40px;
 }
 
 
@@ -28,10 +32,10 @@
     margin-right: 20px;
     padding: 10px;
     background-image: url('../image/deck-tile.png');
-    border: 2px solid #606060;
+    border: 1px solid #606060;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
-
+    transition: transform 0.7s ease-in;
     &__slot {
         position: relative;
         width: 120px;
@@ -44,11 +48,24 @@
         &:not(:last-child){
             margin-right: 10px;
         }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background-image: url('../image/icons/add-card.png');
+            background-size: cover;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
     }
     &__slot--hovered {
-        background-color: rgba($color: #cccccc, $alpha: 0.3);
+        background-color: rgba($color: #cccccc, $alpha: 0.2);
         &::before {
-
+            opacity: 0.3;
         }
     }
     &__slot--game-active {
@@ -76,6 +93,9 @@
         }
     }
 }
+.card-deck--active {
+    transform: translateY(-70px) rotateX(-10deg);
+}
 
 
 .card-shop {
@@ -83,10 +103,22 @@
     right: 0;
     max-height: calc(100vh - 40px);
     padding: 10px 25px;
-    border: 2px solid #303030;
+    background-image: url('../image/deck-tile.png');
+    border: 1px solid #606060;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
     overflow: auto;
     box-sizing: border-box;
+    // &__button {
+    //     position: absolute;
+    //     top: 50%;
+    //     // left: -40px;
+    //     left: 0;
+    //     width: 40px;
+    //     height: 40px;
+    //     background-color: #fff;
+    //     cursor: pointer;
+    // }
     &__slot {
         &:not(:last-child){
             margin-bottom: 10px;

@@ -5,20 +5,27 @@ import randomCards from "./randomCards.js";
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let playButton = document.querySelector('.play');
+    const cards = document.querySelectorAll('.js-card');
+    const cardSlots = document.querySelectorAll('.js-card-slot');
+    const cardDeck = document.querySelector('.js-card-deck');
+    const cardTable = document.querySelector('.js-card-table');
+    const playButton = document.querySelector('.play');
 
     playButton.addEventListener('click', function (evt) {
         evt.preventDefault();
         for (const slot of cardSlots) {
             slot.classList.add('card-deck__slot--game-active');
         }
-        for (const card of cards) {
+
+        drag.cardArray.forEach(card => {
             card.classList.add('card--hovered');
-        }
+        });
+
+        cardDeck.classList.add('card-deck--active');
+        console.log(drag.cardArray);
     });
 
-    const cards = document.querySelectorAll('.js-card');
-    const cardSlots = document.querySelectorAll('.js-card-slot');
+
 
 
     randomCards.generate(cards);

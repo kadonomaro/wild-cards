@@ -9,6 +9,7 @@
 	padding-right: 200px;
 	background-image: url('../image/fabric-tile.png');
 	box-sizing: border-box;
+	perspective: 1000px;
 	&::before {
 		content: '';
 		position: absolute;
