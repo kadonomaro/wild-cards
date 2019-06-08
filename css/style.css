@@ -24,7 +24,23 @@
           box-sizing: border-box;
 }
 
+.game::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background-image: url("../image/table-decals.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .card-table {
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -35,9 +51,21 @@
   padding: 20px;
   background-image: url("../image/table-wood-min.jpg");
   background-size: cover;
+  background-position: 100%;
   border-radius: 20px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-table::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 140px;
+  height: 140px;
+  background-image: url("../image/coins.png");
+  background-size: contain;
 }
 
 .card-deck {
@@ -48,15 +76,19 @@
       align-self: center;
   margin-right: 20px;
   padding: 10px;
-  border: 2px solid #303030;
+  background-image: url("../image/deck-tile.png");
+  border: 2px solid #606060;
   border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .card-deck__slot {
+  position: relative;
   width: 120px;
   height: 180px;
   padding: 3px;
-  border: 2px dashed rgba(48, 48, 48, 0.3);
+  border: 2px dashed rgba(204, 204, 204, 0.5);
   border-radius: 5px;
   -webkit-transition: background-color 0.3s ease-in, -webkit-transform 0.7s ease-in;
   transition: background-color 0.3s ease-in, -webkit-transform 0.7s ease-in;
@@ -71,7 +103,7 @@
 }
 
 .card-deck__slot--hovered {
-  background-color: #cccccc;
+  background-color: rgba(204, 204, 204, 0.3);
 }
 
 .card-deck__slot--game-active {
