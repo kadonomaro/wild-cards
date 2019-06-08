@@ -1,11 +1,11 @@
 .game {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 25vh) 1fr;
-    grid-template-areas: 
-    "card-table card-table card-table card-shop" 
-    "card-table card-table card-table card-shop"
-    "card-table card-table card-table card-shop"
-    "card-deck card-deck card-deck card-shop";
-    padding: 20px;
+    position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100vw;
+	height: 100vh;
+	padding: 20px;
+	padding-right: 200px;
+	box-sizing: border-box;
   }
