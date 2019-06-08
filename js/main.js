@@ -17,14 +17,23 @@ document.addEventListener('DOMContentLoaded', function () {
             slot.classList.add('card-deck__slot--game-active');
         }
 
-        drag.cardArray.forEach(card => {
-            card.classList.add('card--hovered');
-        });
-
         cardDeck.classList.add('card-deck--active');
-        console.log(drag.cardArray);
+        hoveredCard();
     });
 
+    
+
+
+    function hoveredCard() {
+        drag.cardArray.forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                drag.cardArray.forEach(card => {
+                    card.classList.remove('card--hovered');
+                });
+                this.classList.add('card--hovered');
+            });
+        });
+    }
 
 
 
@@ -45,10 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     for (const slot of cardSlots) {
-        slot.addEventListener('click', function () {
-            console.dir(this); 
-        });
-
         slot.addEventListener('dragover', function(evt){
             drag.over(evt);
         });

@@ -217,10 +217,11 @@
   border-radius: 5px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: -webkit-box-shadow 0.3s ease-in;
-  transition: -webkit-box-shadow 0.3s ease-in;
-  transition: box-shadow 0.3s ease-in;
-  transition: box-shadow 0.3s ease-in, -webkit-box-shadow 0.3s ease-in;
+  -webkit-transition: -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+  transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
+  transition: transform 0.2s ease-in, box-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+  will-change: transform;
 }
 
 .card__title {
@@ -289,15 +290,6 @@
 }
 
 .card--hovered {
-  -webkit-transition: -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
-  transition: -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
-  transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
-  transition: transform 0.2s ease-in, box-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
-}
-
-.card--hovered:hover {
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -webkit-transform: translateY(-30%);
           transform: translateY(-30%);
 }
