@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const slot of cardSlots) {
             slot.classList.add('card-deck__slot--game-active');
         }
+        for (const card of cards) {
+            card.classList.add('card--hovered');
+        }
     });
 
     const cards = document.querySelectorAll('.js-card');

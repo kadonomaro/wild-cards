@@ -5,7 +5,6 @@ let drag = {
     start: function (card, cardHoldClass, cardInvisibleClass) {
         card.classList.add(cardHoldClass);
 		this.currentCard = card;
-		console.dir(this.currentCard);
 
         setTimeout(() => {
             if (card.classList.contains(cardHoldClass)) {

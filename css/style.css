@@ -63,8 +63,8 @@
 }
 
 .card-deck__slot--game-active:first-child {
-  -webkit-transform: translateY(30%) rotate(-25deg);
-          transform: translateY(30%) rotate(-25deg);
+  -webkit-transform: translateY(30%) translateX(10%) rotate(-25deg);
+          transform: translateY(30%) translateX(10%) rotate(-25deg);
 }
 
 .card-deck__slot--game-active:nth-child(2) {
@@ -88,8 +88,8 @@
 }
 
 .card-deck__slot--game-active:last-child {
-  -webkit-transform: translateY(30%) rotate(25deg);
-          transform: translateY(30%) rotate(25deg);
+  -webkit-transform: translateY(30%) translateX(-10%) rotate(25deg);
+          transform: translateY(30%) translateX(-10%) rotate(25deg);
 }
 
 .card-deck__slot--game-active:not(:last-child) {
@@ -134,5 +134,17 @@
 
 .card--invisible {
   display: none;
+}
+
+.card--hovered {
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+}
+
+.card--hovered:hover {
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
 }
 /*# sourceMappingURL=style.css.map */
