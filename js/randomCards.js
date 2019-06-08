@@ -10,12 +10,14 @@ let randomCards = {
 
     generate: function (cards) {
         cards.forEach(card => {
-            let cardStr = card.querySelector('.card__str');
-            let cardDef = card.querySelector('.card__def');
+            let cardStr = card.querySelector('.js-card-str');
+            let cardDef = card.querySelector('.js-card-def');
             this.data
                 .then((json) => {
                     cardStr.textContent = json.strength[this.random(0, json.strength.length - 1)];
                     cardDef.textContent = json.defence[this.random(0, json.defence.length - 1)];
+                    card.style.backgroundImage = `url('${json.frontImage[this.random(0, json.frontImage.length - 1)]}')`;
+                    console.log(json.frontImage[this.random(0, json.frontImage.length - 1)]);
                 });
 
         });

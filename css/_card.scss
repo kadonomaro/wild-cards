@@ -12,8 +12,8 @@
     border-radius: 10px;
 
     &__slot {
-        width: 90px;
-        height: 135px;
+        width: 120px;
+        height: 180px;
         padding: 3px;
         border: 2px dashed rgba($color: #303030, $alpha: 0.3);
         border-radius: 5px;
@@ -70,32 +70,81 @@
 
 
 .card {
-    width: 90px;
-    height: 135px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    height: 180px;
     padding: 10px;
-    background-color: #ff9900;
+    background-image: url('../image/card-background-front.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
     border-radius: 5px;
     box-sizing: border-box;
     transition: box-shadow 0.3s ease-in;
     &__title {
+        flex-grow: 1;
         display: block;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+        background-image: url('../image/cards/griffin.png');
+        background-position: bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
-    &__str {
-        display: block;
+    &__bottom {
+        display: flex;
+        padding: 5px;
+        background-color: rgba($color: #6e4200, $alpha: 0.2);
+        border-top: 2px solid rgba($color: #000000, $alpha: 0.3);
+        border-bottom: 2px solid rgba($color: #000000, $alpha: 0.3);
+        border-radius: 5px;
     }
-    &__def {
+    &__specs {
+        position: relative;
         display: block;
+        width: 50%;
+        padding-left: 25px;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: right;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }
+    &__specs--str {
+        margin-right: 5px;
+        &::before {
+            background-image: url('../image/icons/sword.svg');
+        }
+    }
+    &__specs--def {
+        &::before {
+            background-image: url('../image/icons/shield.svg');
+        }
     }
 }
 .card--hold {
-    background-color: red;
+    // background-color: red;
+
 }
 .card--invisible {
     display: none;
 }
 .card--hovered {
-    transition: transform 0.2s ease-in;
+    transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
     &:hover {
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
         transform: translateY(-30%);
     }
 }
