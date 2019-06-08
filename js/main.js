@@ -1,6 +1,8 @@
 import drag from "./drag.js";
 import randomCards from "./randomCards.js";
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
     let playButton = document.querySelector('.play');

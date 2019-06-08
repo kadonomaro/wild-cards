@@ -77,6 +77,15 @@
     border-radius: 5px;
     box-sizing: border-box;
     transition: box-shadow 0.3s ease-in;
+    &__title {
+        display: block;
+    }
+    &__str {
+        display: block;
+    }
+    &__def {
+        display: block;
+    }
 }
 .card--hold {
     background-color: red;

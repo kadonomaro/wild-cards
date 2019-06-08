@@ -128,6 +128,18 @@
   transition: box-shadow 0.3s ease-in, -webkit-box-shadow 0.3s ease-in;
 }
 
+.card__title {
+  display: block;
+}
+
+.card__str {
+  display: block;
+}
+
+.card__def {
+  display: block;
+}
+
 .card--hold {
   background-color: red;
 }
