@@ -144,8 +144,10 @@
     &__title {
         flex-grow: 1;
         display: block;
+        color: #303030;
+        font-size: 12px;
         font-weight: bold;
-        font-size: 18px;
+        line-height: 1;
         text-align: center;
         background-image: url('../image/cards/wolf.png');
         background-position: bottom;

@@ -2,7 +2,6 @@ import drag from "./drag.js";
 import randomCards from "./randomCards.js";
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
 
     const cards = document.querySelectorAll('.js-card');
@@ -69,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     }
+
     
 
 });
