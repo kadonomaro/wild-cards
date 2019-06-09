@@ -1,5 +1,6 @@
 import drag from "./drag.js";
 import randomCards from "./randomCards.js";
+import modal from "./modal.js";
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -10,22 +11,35 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardSlots = cardDeck.querySelectorAll('.js-card-slot');
     const cardTable = document.querySelector('.js-card-table');
     const cardDeckTable = document.querySelector('.js-card-deck-table');
-    const playButton = document.querySelector('.play');
+    const playButton = document.querySelector('.js-play');
     const gameMoney = document.querySelector('.js-game-money');
     gameMoney.textContent = 200;
 
     playButton.addEventListener('click', function (evt) {
-        evt.preventDefault();
-        for (const slot of cardSlots) {
-            slot.classList.add('card-deck__slot--game-active');
+
+        if (drag.cardArray.length === 6) {
+            evt.preventDefault();
+            for (const slot of cardSlots) {
+                slot.classList.add('card-deck__slot--game-active');
+            }
+            for (const card of enemyCards) {
+                card.classList.add('enemy-deck__card--active');
+                card.style.transitionDelay = card.dataset.delay;
+            }
+            cardDeckTable.classList.add('card-deck--table-active');
+            cardDeck.classList.add('card-deck--active');
+            hoveredCard();
+            
+            this.style.opacity = '0';
+            setTimeout(() => {
+                this.style.display = 'none';
+            },500);
+        } else {
+            modal.openClass = 'game-modal--active';
+            modal.init();
         }
-        for (const card of enemyCards) {
-            card.classList.add('enemy-deck__card--active');
-            card.style.transitionDelay = card.dataset.delay;
-        }
-        cardDeckTable.classList.add('card-deck--table-active');
-        cardDeck.classList.add('card-deck--active');
-        hoveredCard();
+
+
     });
 
     

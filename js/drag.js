@@ -52,11 +52,7 @@ let drag = {
                 money.textContent -= cardCost;
             });
 
-
-            console.dir(this.cardArray);
-
         }
-        
     }
 };
 
