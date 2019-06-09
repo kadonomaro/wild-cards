@@ -32,25 +32,29 @@ let drag = {
 
     drop: function (card, cardSlot, cardSlotHoveredClass, money) {
         cardSlot.classList.remove(cardSlotHoveredClass);
+        let currentCost = card.querySelector('.js-card-cost').textContent;
 
-        if (cardSlot.children.length === 0 && money > 0) {
+        if (cardSlot.children.length === 0 && +money.textContent >= +currentCost) {
 
             cardSlot.append(card);
+
+            this.cardArray = this.cardArray.filter(item => {
+                if (card !== item) {
+                    return item;
+                }
+            });
+
             this.cardArray.push(card);
+            money.textContent = 200;
 
-        } else if (cardSlot.children.length > 0 && money > 0) {
+            this.cardArray.forEach(item => {
+                let cardCost = item.querySelector('.js-card-cost').textContent;
+                money.textContent -= cardCost;
+            });
 
-            if (cardSlot.previousElementSibling !== null && cardSlot.previousElementSibling.children.length === 0 && money > 0) {
 
-                cardSlot.previousElementSibling.append(card);
-                this.cardArray.push(card);
+            console.dir(this.cardArray);
 
-            } else if (cardSlot.nextElementSibling !== null && cardSlot.nextElementSibling.children.length === 0 && money > 0) {
-
-                cardSlot.nextElementSibling.append(card);
-                this.cardArray.push(card);
-
-            }
         }
         
     }
