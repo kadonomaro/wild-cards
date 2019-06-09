@@ -47,6 +47,33 @@
   pointer-events: none;
 }
 
+.game-money {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 5px;
+  padding-left: 40px;
+  color: #ff9900;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.game-money::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background-image: url("../image/icons/diamond.png");
+  background-size: cover;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 @media screen and (max-width: 1280px) {
   .game {
     padding: 10px;
@@ -274,6 +301,24 @@
   background-repeat: no-repeat;
 }
 
+.card__cost {
+  position: absolute;
+  top: -10px;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  padding-top: 3px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-align: center;
+  background-image: url("../image/icons/diamond.png");
+  background-size: cover;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .card__bottom {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -357,9 +402,36 @@
   .card-table {
     margin: 20px;
   }
+  .card-deck__slot {
+    width: 90px;
+    height: 135px;
+  }
   .card-shop {
     max-height: calc(100vh - 20px);
     padding: 10px;
+  }
+  .card {
+    width: 90px;
+    height: 135px;
+  }
+  .card__cost {
+    top: -5px;
+    left: -5px;
+    width: 20px;
+    height: 20px;
+    padding-top: 0;
+    font-size: 12px;
+  }
+  .card__bottom {
+    padding: 5px 0;
+  }
+  .card__specs {
+    padding-left: 20px;
+    font-size: 14px;
+  }
+  .card__specs::before {
+    width: 20px;
+    height: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */

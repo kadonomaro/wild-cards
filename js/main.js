@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardTable = document.querySelector('.js-card-table');
     const cardDeckTable = document.querySelector('.js-card-deck-table');
     const playButton = document.querySelector('.play');
+    const gameMoney = document.querySelector('.js-game-money');
 
     playButton.addEventListener('click', function (evt) {
         evt.preventDefault();
@@ -65,7 +66,13 @@ document.addEventListener('DOMContentLoaded', function () {
             drag.leave(slot, 'card-deck__slot--hovered');
         });
         slot.addEventListener('drop', function(){
-            drag.drop(drag.currentCard, slot, 'card-deck__slot--hovered');
+            let currentCost = drag.currentCard.querySelector('.js-card-cost').textContent;
+            gameMoney.textContent -= currentCost;
+            drag.drop(drag.currentCard, slot, 'card-deck__slot--hovered', gameMoney.textContent);
+            
+            if (gameMoney.textContent < 0) {
+                gameMoney.textContent = 0;
+            }
         });
 
     }

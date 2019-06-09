@@ -25,7 +25,34 @@
 		pointer-events: none;
 	}
 
-  }
+}
+
+
+.game-money {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	padding: 5px;
+	padding-left: 40px;
+	color: #ff9900;
+	font-size: 28px;
+	font-weight: bold;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 5px;
+		width: 30px;
+		height: 30px;
+		padding: 5px;
+		background-image: url('../image/icons/diamond.png');
+		background-size: cover;
+		transform: translateY(-50%);
+		box-sizing: border-box;
+	}
+}
+
+  
 
 
 

@@ -11,10 +11,11 @@ let randomCards = {
 
     generate: function (cards) {
         cards.forEach(card => {
+            let cardTitle;
+            let cardCost = card.querySelector('.js-card-cost');
             let cardStr = card.querySelector('.js-card-str');
             let cardDef = card.querySelector('.js-card-def');
             let cardImage = card.querySelector('.js-body');
-            let cardTitle;
             this.data
                 .then((json) => {
                     cardStr.textContent = json.strength[this.random(0, json.strength.length - 1)];
@@ -33,16 +34,19 @@ let randomCards = {
                         case (cardStr.textContent >= 10 && cardDef.textContent >= 8):
                             cardTitle = 'Strong armored ' + cardTitle;
                             card.classList.add('card--golden');
+                            cardCost.textContent = 90;
                             break;
                         case (cardStr.textContent <= 6):
                             cardTitle = 'Little ' + cardTitle;
+                            cardCost.textContent = 15;
                             break;
                         case (cardStr.textContent > 6):
                             cardTitle = 'Strong ' + cardTitle;
+                            cardCost.textContent = 40;
                             break;
                     }
-
                     cardImage.textContent = cardTitle;
+
                     
                 });
 
