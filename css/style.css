@@ -102,10 +102,53 @@
   width: 120px;
   height: 180px;
   padding: 3px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 .enemy-deck__slot:not(:last-child) {
   margin-right: 10px;
+}
+
+.enemy-deck__card {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-transition: -webkit-transform 1.2s ease-in;
+  transition: -webkit-transform 1.2s ease-in;
+  transition: transform 1.2s ease-in;
+  transition: transform 1.2s ease-in, -webkit-transform 1.2s ease-in;
+}
+
+.enemy-deck__card::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: red;
+  border-radius: 5px;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.enemy-deck__card--active {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+@media screen and (max-width: 1280px) {
+  .enemy-deck__slot {
+    width: 90px;
+    height: 135px;
+  }
 }
 
 .card-table {
@@ -242,6 +285,13 @@
   margin-right: 0;
 }
 
+.card-deck__card {
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+}
+
 .card-deck--active {
   -webkit-transform: translateY(-70px) rotateX(-10deg);
           transform: translateY(-70px) rotateX(-10deg);
@@ -305,10 +355,6 @@
   border-radius: 5px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
-  transition: -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
-  transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
-  transition: transform 0.2s ease-in, box-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
   will-change: transform;
 }
 
@@ -322,7 +368,6 @@
   font-weight: bold;
   line-height: 1.1;
   text-align: center;
-  background-image: url("../image/cards/wolf.png");
   background-position: bottom;
   background-size: contain;
   background-repeat: no-repeat;
@@ -400,7 +445,7 @@
           box-shadow: 0 0 10px 3px rgba(255, 153, 0, 0.7);
 }
 
-.card--golden::before {
+.card--golden::after {
   content: '';
   position: absolute;
   top: 0;

@@ -92,6 +92,9 @@
             margin-right: 0;
         }
     }
+    &__card {
+        transition: transform 0.2s ease-in;
+    }
 }
 .card-deck--active {
     transform: translateY(-70px) rotateX(-10deg);
@@ -123,16 +126,6 @@
     box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
     overflow: auto;
     box-sizing: border-box;
-    // &__button {
-    //     position: absolute;
-    //     top: 50%;
-    //     // left: -40px;
-    //     left: 0;
-    //     width: 40px;
-    //     height: 40px;
-    //     background-color: #fff;
-    //     cursor: pointer;
-    // }
     &__slot {
         &:not(:last-child){
             margin-bottom: 10px;
@@ -154,7 +147,6 @@
     background-size: contain;
     border-radius: 5px;
     box-sizing: border-box;
-    transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
     will-change: transform;
     &__title {
         flex-grow: 1;
@@ -164,7 +156,6 @@
         font-weight: bold;
         line-height: 1.1;
         text-align: center;
-        background-image: url('../image/cards/wolf.png');
         background-position: bottom;
         background-size: contain;
         background-repeat: no-repeat;
@@ -230,7 +221,7 @@
     color: #ffffff;
     text-shadow: 0 0 3px rgba($color: #996300, $alpha: 1.0);
     box-shadow: 0 0 10px 3px rgba($color: #ff9900, $alpha: 0.7);
-    &::before {
+    &::after {
         content: '';
         position: absolute;
         top: 0;

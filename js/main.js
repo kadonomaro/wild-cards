@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const slot of cardSlots) {
             slot.classList.add('card-deck__slot--game-active');
         }
+        for (const card of enemyCards) {
+            card.classList.add('enemy-deck__card--active');
+            card.style.transitionDelay = card.dataset.delay;
+        }
         cardDeckTable.classList.add('card-deck--table-active');
         cardDeck.classList.add('card-deck--active');
         hoveredCard();
@@ -69,13 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
             drag.leave(slot, 'card-deck__slot--hovered');
         });
         slot.addEventListener('drop', function(){
-            
-            // gameMoney.textContent -= currentCost;
             drag.drop(drag.currentCard, slot, 'card-deck__slot--hovered', gameMoney);
-            
-            // if (gameMoney.textContent < 0) {
-            //     gameMoney.textContent = 0;
-            // }
+            drag.currentCard.classList.add('card-deck__card');
         });
 
     }
