@@ -14,8 +14,8 @@
         position: absolute;
         top: 20px;
         left: 30px;
-        width: 140px;
-        height: 140px;
+        width: 8.64%;
+        padding-bottom: 8.64%;
         background-image: url('../image/coins.png');
         background-size: contain;
         pointer-events: none;
@@ -96,12 +96,26 @@
 .card-deck--active {
     transform: translateY(-70px) rotateX(-10deg);
 }
+.card-deck--table {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    display: none;
+    border: none;
+    background-image: none;
+    transform: translateX(-50%);
+    box-shadow: none;
+}
+.card-deck--table-active {
+    display: inline-flex;
+}
 
 
 .card-shop {
     position: absolute;
     right: 0;
     max-height: calc(100vh - 40px);
+    margin-right: 5px;
     padding: 10px 25px;
     background-image: url('../image/deck-tile.png');
     border: 1px solid #606060;

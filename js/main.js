@@ -5,9 +5,10 @@ import randomCards from "./randomCards.js";
 document.addEventListener('DOMContentLoaded', function () {
 
     const cards = document.querySelectorAll('.js-card');
-    const cardSlots = document.querySelectorAll('.js-card-slot');
     const cardDeck = document.querySelector('.js-card-deck');
+    const cardSlots = cardDeck.querySelectorAll('.js-card-slot');
     const cardTable = document.querySelector('.js-card-table');
+    const cardDeckTable = document.querySelector('.js-card-deck-table');
     const playButton = document.querySelector('.play');
 
     playButton.addEventListener('click', function (evt) {
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const slot of cardSlots) {
             slot.classList.add('card-deck__slot--game-active');
         }
-
+        cardDeckTable.classList.add('card-deck--table-active');
         cardDeck.classList.add('card-deck--active');
         hoveredCard();
     });
