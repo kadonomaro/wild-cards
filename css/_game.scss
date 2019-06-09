@@ -24,7 +24,6 @@
 		opacity: 0.5;
 		pointer-events: none;
 	}
-
 }
 
 
@@ -73,8 +72,8 @@
 	transform: translate(-50%, -50%);
 	cursor: pointer;
 	transition: opacity 0.5s ease-in;
-	
 }
+
 
 
 .game-modal {
@@ -91,10 +90,12 @@
 	background-image: url('../image/modal.jpg');
 	background-size: contain;
 	border-radius: 5px;
-	transform: translate(-50%, -50%);
 	box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
 	box-sizing: border-box;
+	transition: opacity 0.3s ease-in;
+	transform: translate(-50%, -50%);
 	user-select: none;
+	opacity: 0;
 	&__button {
 		position: absolute;
 		top: 5px;
@@ -116,7 +117,7 @@
 	}
 }
 .game-modal--active {
-	display: block;
+	opacity: 1;
 }
 
   

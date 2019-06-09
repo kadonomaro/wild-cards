@@ -116,16 +116,19 @@
   background-image: url("../image/modal.jpg");
   background-size: contain;
   border-radius: 5px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  opacity: 0;
 }
 
 .game-modal__button {
@@ -151,7 +154,7 @@
 }
 
 .game-modal--active {
-  display: block;
+  opacity: 1;
 }
 
 @media screen and (max-width: 1280px) {

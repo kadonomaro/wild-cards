@@ -1,6 +1,7 @@
 import drag from "./drag.js";
 import randomCards from "./randomCards.js";
 import modal from "./modal.js";
+import audio from "./audio.js";
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -18,7 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
     playButton.addEventListener('click', function (evt) {
 
         if (drag.cardArray.length === 6) {
+
             evt.preventDefault();
+            audio.play(100);
+
             for (const slot of cardSlots) {
                 slot.classList.add('card-deck__slot--game-active');
             }
@@ -33,8 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
             this.style.opacity = '0';
             setTimeout(() => {
                 this.style.display = 'none';
-            },500);
+            }, 500);
+            
         } else {
+
             modal.openClass = 'game-modal--active';
             modal.init();
         }
