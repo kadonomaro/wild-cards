@@ -31,8 +31,9 @@ let randomCards = {
 
                     switch (true) {
                         case (cardStr.textContent >= 8 && cardDef.textContent >= 8):
-                                cardTitle = 'Strong armored ' + cardTitle;
-                                break;
+                            cardTitle = 'Strong armored ' + cardTitle;
+                            card.classList.add('card--golden');
+                            break;
                         case (cardStr.textContent <= 6):
                             cardTitle = 'Little ' + cardTitle;
                             break;

@@ -7,7 +7,9 @@
         "../image/cards/werewolf.png",
         "../image/cards/pegasus.png",
         "../image/cards/cobra.png",
-        "../image/cards/drake.png"
+        "../image/cards/drake.png",
+        "../image/cards/phoenix.png",
+        "../image/cards/valkyrie.png"
     ],
     "frontImage": [
         "../image/card-background-front.jpg", 

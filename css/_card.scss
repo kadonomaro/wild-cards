@@ -133,7 +133,8 @@
     flex-direction: column;
     width: 120px;
     height: 180px;
-    padding: 10px;
+    padding: 7px;
+    color: #303030;
     background-image: url('../image/card-background-front.jpg');
     background-repeat: no-repeat;
     background-size: contain;
@@ -144,10 +145,10 @@
     &__title {
         flex-grow: 1;
         display: block;
-        color: #303030;
+        color: inherit;
         font-size: 12px;
         font-weight: bold;
-        line-height: 1;
+        line-height: 1.1;
         text-align: center;
         background-image: url('../image/cards/wolf.png');
         background-position: bottom;
@@ -195,6 +196,25 @@
         }
     }
 }
+.card--golden {
+    color: #ffffff;
+    text-shadow: 0 0 3px rgba($color: #996300, $alpha: 1.0);
+    box-shadow: 0 0 10px 3px rgba($color: #ff9900, $alpha: 0.7);
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba($color: #ff9900, $alpha: 0.1);
+        border-radius: inherit;
+        pointer-events: none;
+    }
+}
+.card--golden .card__bottom {
+    background-color: rgba($color: #ff9900, $alpha: 0.3);
+}
 .card--hold {
     // background-color: red;
 
@@ -204,4 +224,17 @@
 }
 .card--hovered {
     transform: translateY(-30%);
+}
+
+
+
+@media screen and (max-width: 1280px) {
+    .card-table {
+        margin: 20px;
+    }
+
+    .card-shop {
+        max-height: calc(100vh - 20px);
+        padding: 10px;
+    }
 }
