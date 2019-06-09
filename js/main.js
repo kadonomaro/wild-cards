@@ -5,6 +5,7 @@ import randomCards from "./randomCards.js";
 document.addEventListener('DOMContentLoaded', function () {
 
     const cards = document.querySelectorAll('.js-card');
+    const enemyCards = document.querySelectorAll('.js-enemy-card');
     const cardDeck = document.querySelector('.js-card-deck');
     const cardSlots = cardDeck.querySelectorAll('.js-card-slot');
     const cardTable = document.querySelector('.js-card-table');
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     randomCards.generate(cards);
+    randomCards.generate(enemyCards);
 
 
     for (const card of cards) {

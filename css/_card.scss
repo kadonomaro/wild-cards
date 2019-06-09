@@ -245,15 +245,22 @@
 .card--golden .card__bottom {
     background-color: rgba($color: #ff9900, $alpha: 0.3);
 }
-.card--hold {
-    // background-color: red;
+// .card--hold {
+//     // background-color: red;
 
-}
+// }
+
 .card--invisible {
     display: none;
 }
 .card--hovered {
     transform: translateY(-30%);
+}
+.card--enemy {
+    user-select: none;
+}
+.card--enemy .card__cost {
+    display: none;
 }
 
 

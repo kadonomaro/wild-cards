@@ -56,6 +56,10 @@
   color: #ff9900;
   font-size: 28px;
   font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .game-money::before {
@@ -79,6 +83,29 @@
     padding: 10px;
     padding-right: 150px;
   }
+}
+
+.enemy-deck {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.enemy-deck__slot {
+  position: relative;
+  width: 120px;
+  height: 180px;
+  padding: 3px;
+}
+
+.enemy-deck__slot:not(:last-child) {
+  margin-right: 10px;
 }
 
 .card-table {
@@ -396,6 +423,17 @@
 .card--hovered {
   -webkit-transform: translateY(-30%);
           transform: translateY(-30%);
+}
+
+.card--enemy {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.card--enemy .card__cost {
+  display: none;
 }
 
 @media screen and (max-width: 1280px) {

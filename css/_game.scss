@@ -37,6 +37,7 @@
 	color: #ff9900;
 	font-size: 28px;
 	font-weight: bold;
+	user-select: none;
 	&::before {
 		content: '';
 		position: absolute;
