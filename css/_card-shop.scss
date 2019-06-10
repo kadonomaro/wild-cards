@@ -20,3 +20,13 @@
 .card-shop--hidden {
     transform: translateX(120%);
 }
+
+
+
+@media screen and (max-width: 1280px) {
+    .card-shop {
+        max-height: calc(100vh - 20px);
+        margin-right: 5px;
+        padding: 10px;
+    }
+}

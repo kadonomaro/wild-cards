@@ -156,6 +156,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (card.classList.contains('card--hovered')) {
                         card.classList.remove('card--hovered');
                     }
+                    if (card.classList.contains('card--golden')) {
+                        card.classList.remove('card--shadow');
+                        card.classList.add('card--golden-shadow');
+                    }
                 });
 
                 cardDeckTableSlots.forEach(slot => {

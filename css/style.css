@@ -410,7 +410,16 @@
   background-color: rgba(255, 153, 0, 0.3);
 }
 
+.card--golden-shadow:hover {
+  -webkit-box-shadow: 0 0 12px 5px rgba(255, 153, 0, 0.7);
+          box-shadow: 0 0 12px 5px rgba(255, 153, 0, 0.7);
+  -webkit-transform: translate(-3px, -3px);
+          transform: translate(-3px, -3px);
+}
+
 .card--shadow {
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   -webkit-transition: -webkit-box-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
   transition: -webkit-box-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in;
   transition: box-shadow 0.2s ease-in, transform 0.2s ease-in;
@@ -420,6 +429,13 @@
 .card--shadow:hover {
   -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
           box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: translate(-3px, -3px);
+          transform: translate(-3px, -3px);
+}
+
+.card--golden-shadow:hover {
+  -webkit-box-shadow: 0 0 12px 5px rgba(255, 153, 0, 0.7);
+          box-shadow: 0 0 12px 5px rgba(255, 153, 0, 0.7);
   -webkit-transform: translate(-3px, -3px);
           transform: translate(-3px, -3px);
 }
@@ -445,18 +461,6 @@
 }
 
 @media screen and (max-width: 1280px) {
-  .card-table {
-    margin: 20px;
-  }
-  .card-deck__slot {
-    width: 90px;
-    height: 135px;
-  }
-  .card-shop {
-    max-height: calc(100vh - 20px);
-    margin-right: 5px;
-    padding: 10px;
-  }
   .card {
     width: 90px;
     height: 135px;
@@ -527,6 +531,12 @@
 
 .card-table--active {
   margin-bottom: -40px;
+}
+
+@media screen and (max-width: 1280px) {
+  .card-table {
+    margin: 20px;
+  }
 }
 
 .card-deck {
@@ -640,10 +650,10 @@
 }
 
 .card-deck__card {
-  -webkit-transition: -webkit-transform 0.2s ease-in;
-  transition: -webkit-transform 0.2s ease-in;
-  transition: transform 0.2s ease-in;
-  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  -webkit-transition: -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+  transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
+  transition: transform 0.2s ease-in, box-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
 }
 
 .card-deck--active {
@@ -668,6 +678,13 @@
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+}
+
+@media screen and (max-width: 1280px) {
+  .card-deck__slot {
+    width: 90px;
+    height: 135px;
+  }
 }
 
 .card-shop {
@@ -697,5 +714,13 @@
 .card-shop--hidden {
   -webkit-transform: translateX(120%);
           transform: translateX(120%);
+}
+
+@media screen and (max-width: 1280px) {
+  .card-shop {
+    max-height: calc(100vh - 20px);
+    margin-right: 5px;
+    padding: 10px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
