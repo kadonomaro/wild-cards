@@ -45,7 +45,7 @@ let drag = {
             });
 
             this.cardArray.push(card);
-            console.log(this.cardArray);
+
             money.textContent = 200;
 
             this.cardArray.forEach(item => {

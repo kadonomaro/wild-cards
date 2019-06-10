@@ -132,15 +132,18 @@
 	user-select: none;
 	&__item {
 		position: absolute;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	&__item--paper {
 		left: 70px;
 		bottom: 30px;
 		width: 300px;
 		height: 450px;
 		background-image: url('../image/paper.png');
-		background-size: contain;
-		background-repeat: no-repeat;
 		transform: rotate(30deg);
 	}
+
 }
 
 

@@ -1,0 +1,39 @@
+.card-table {
+    position: relative;
+    z-index: 5;
+    flex-grow: 1;
+    align-self: stretch;
+    margin: 40px;
+    padding: 20px;
+    background-image: url('../image/table-wood-min.jpg');
+    background-size: cover;
+    background-position: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.7);
+    &::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        width: 8.64%;
+        padding-bottom: 8.64%;
+        background-image: url('../image/coins.png');
+        background-size: contain;
+        pointer-events: none;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 50%;
+        right: 30px;
+        width: 8.64%;
+        padding-bottom: 8.64%;
+        background-image: url('../image/coins.png');
+        background-size: contain;
+        pointer-events: none;
+    }
+
+}
+.card-table--active {
+    margin-bottom: -40px;
+}

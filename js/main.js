@@ -25,15 +25,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     gameMoney.textContent = 200;
 
+    randomCards.generate(cards);
+    randomCards.generate(enemyCards);
+
     playButton.addEventListener('click', function (evt) {
         
 
         if (drag.cardArray.length === 6) {
 
             evt.preventDefault();
+            this.style.opacity = '0';
+            setTimeout(() => {
+                this.style.display = 'none';
+            }, 500);
 
             hideDOMElement(cardShop, 'card-shop--hidden');
-
+            hoveredCard();
             audio.play(20);
 
             for (const slot of cardSlots) {
@@ -43,22 +50,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 card.classList.add('enemy-deck__card--active');
                 card.style.transitionDelay = card.dataset.delay;
             }
+
             cardDeckTable.classList.add('card-deck--table-active');
             cardDeck.classList.add('card-deck--active');
-            hoveredCard();
-            
-            this.style.opacity = '0';
-            setTimeout(() => {
-                this.style.display = 'none';
-            }, 500);
+
+
+            enemyCards.forEach((card, index) => {
+                card.dataset.str = card.querySelector('.js-card-str').textContent;
+                card.dataset.def = card.querySelector('.js-card-def').textContent;
+                card.dataset.id = index;
+            });
+
+            cards.forEach(card => {
+                card.dataset.str = card.querySelector('.js-card-str').textContent;
+                card.dataset.def = card.querySelector('.js-card-def').textContent;
+            });
             
         } else {
 
             modal.openClass = 'game-modal--active';
             modal.init();
         }
-
-
     });
 
 
@@ -68,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+
     function AddHoveredClass() {
         drag.cardArray.forEach(card => {
             card.classList.remove('card--hovered');
@@ -75,19 +88,13 @@ document.addEventListener('DOMContentLoaded', function () {
         this.classList.add('card--hovered');
     }
 
+
     function hideDOMElement(element, hideClass) {
         element.classList.add(hideClass);
         cardShop.addEventListener('transitionend', () => {
             element.style.display = 'none';
         });
     }
-
-
-    randomCards.generate(cards);
-    randomCards.generate(enemyCards);
-
-
-
 
 
     for (const card of cards) {
@@ -136,16 +143,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
             drag.dropNoCost(drag.currentCard, slot, 'card-deck__slot--hovered');
 
-            // cardSlots.forEach(slot => {
-            //     if (slot.children.length === 0) {
-            //         console.log('zero');
-            //     }
-            // });
+            if (cardDeck.querySelectorAll('.js-card').length === 0) {
+                
+                cardDeck.classList.remove('card-deck--active');
 
+                let cards = cardDeckTable.querySelectorAll('.js-card');
+                cards.forEach((card, index) => {
+                    friendCardArr.push(card);
+                    card.dataset.id = index;
+                    card.removeEventListener('mouseenter', AddHoveredClass);
+                    card.classList.add('card--shadow');
+                    if (card.classList.contains('card--hovered')) {
+                        card.classList.remove('card--hovered');
+                    }
+                });
+
+                cardDeckTableSlots.forEach(slot => {
+                    slot.classList.add('card-deck__slot--no-bordered');
+                });
+                
+            }
+            
         });
     }
 
-    
 });
 
 
