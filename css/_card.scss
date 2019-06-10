@@ -1,5 +1,6 @@
 .card-table {
     position: relative;
+    z-index: 5;
     flex-grow: 1;
     align-self: stretch;
     margin: 40px;
@@ -20,6 +21,7 @@
         background-size: contain;
         pointer-events: none;
     }
+
 }
 .card-table--active {
     margin-bottom: -40px;
@@ -27,6 +29,8 @@
 
 
 .card-deck {
+    position: relative;
+    z-index: 9;
     display: flex;
     align-self: center;
     margin-right: 20px;

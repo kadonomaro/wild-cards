@@ -1,22 +1,22 @@
 
 {
     "image": [
-        "../image/cards/wolf.png", 
-        "../image/cards/griffin.png", 
-        "../image/cards/eagle.png",
-        "../image/cards/werewolf.png",
-        "../image/cards/pegasus.png",
-        "../image/cards/cobra.png",
-        "../image/cards/drake.png",
-        "../image/cards/phoenix.png",
-        "../image/cards/valkyrie.png",
-        "../image/cards/viking.png",
-        "../image/cards/archer.png"
+        "./image/cards/wolf.png", 
+        "./image/cards/griffin.png", 
+        "./image/cards/eagle.png",
+        "./image/cards/werewolf.png",
+        "./image/cards/pegasus.png",
+        "./image/cards/cobra.png",
+        "./image/cards/drake.png",
+        "./image/cards/phoenix.png",
+        "./image/cards/valkyrie.png",
+        "./image/cards/viking.png",
+        "./image/cards/archer.png"
     ],
     "frontImage": [
-        "../image/card-background-front.jpg", 
-        "../image/card-background-front-2.jpg", 
-        "../image/card-background-front-3.jpg"
+        "./image/card-background-front.jpg", 
+        "./image/card-background-front-2.jpg", 
+        "./image/card-background-front-3.jpg"
     ],
     "strength": [2, 2, 3, 3, 4, 4, 5, 6, 6, 7, 7, 8, 9, 10, 11, 12 ],
     "defence": [2, 4, 6, 8, 10]

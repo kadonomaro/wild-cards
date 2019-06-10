@@ -19,8 +19,16 @@ let modal = {
                 _this.modalBlock.style.display = 'none';
             }, 300);
         });
-    }
+    },
 
+    close: function () {
+        if (this.modalBlock.classList.contains(this.openClass)) {
+            this.modalBlock.classList.remove(this.openClass);
+            setTimeout(() => {
+                this.modalBlock.style.display = 'none';
+            }, 300);
+        }
+    }
 };
 
 export default modal;
