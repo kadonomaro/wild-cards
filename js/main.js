@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardDeckTable = document.querySelector('.js-card-deck-table');
     const cardDeckTableSlots = cardDeckTable.querySelectorAll('.js-card-slot');
 
+    const cardShop = document.querySelector('.js-card-shop');
+
     const playButton = document.querySelector('.js-play');
     const gameMoney = document.querySelector('.js-game-money');
 
@@ -29,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (drag.cardArray.length === 6) {
 
             evt.preventDefault();
+
+            hideDOMElement(cardShop, 'card-shop--hidden');
+
             audio.play(20);
 
             for (const slot of cardSlots) {
@@ -68,6 +73,13 @@ document.addEventListener('DOMContentLoaded', function () {
             card.classList.remove('card--hovered');
         });
         this.classList.add('card--hovered');
+    }
+
+    function hideDOMElement(element, hideClass) {
+        element.classList.add(hideClass);
+        cardShop.addEventListener('transitionend', () => {
+            element.style.display = 'none';
+        });
     }
 
 
@@ -122,21 +134,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         slot.addEventListener('drop', function () {
 
-            // friendCardArr.push(drag.currentCard);
-            // friendCardArr.forEach(card => {
-            //     if (slot.children.length > 0) {
-            //         card.removeEventListener('mouseenter', AddHoveredClass);
-            //         if (card.classList.contains('card--hovered')) {
-            //             card.classList.remove('card--hovered');
-            //         }
+            drag.dropNoCost(drag.currentCard, slot, 'card-deck__slot--hovered');
+
+            // cardSlots.forEach(slot => {
+            //     if (slot.children.length === 0) {
+            //         console.log('zero');
             //     }
             // });
 
-            drag.drop(drag.currentCard, slot, 'card-deck__slot--hovered', gameMoney);
-            // drag.currentCard.classList.add('card-deck__card');
-
-            // console.log(friendCardArr);
-            console.log(drag.cardArray);
         });
     }
 

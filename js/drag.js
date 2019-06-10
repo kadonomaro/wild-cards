@@ -45,6 +45,7 @@ let drag = {
             });
 
             this.cardArray.push(card);
+            console.log(this.cardArray);
             money.textContent = 200;
 
             this.cardArray.forEach(item => {
@@ -53,7 +54,27 @@ let drag = {
             });
 
         }
-    }
+    },
+    // temporary function in search of a solution of problem 
+    dropNoCost: function (card, cardSlot, cardSlotHoveredClass) {
+        cardSlot.classList.remove(cardSlotHoveredClass);
+        
+        if (cardSlot.children.length === 0 ) {
+
+            cardSlot.append(card);
+
+            this.cardArray = this.cardArray.filter(item => {
+                if (card !== item) {
+                    
+                    return item;
+                }
+            });
+
+            this.cardArray.push(card);
+            card.setAttribute('draggable', false);
+
+        }
+    },
 };
 
 export default drag;
