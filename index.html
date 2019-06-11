@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Simple card offline game. Card game random based.">
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Wild Cards</title>
@@ -18,6 +19,9 @@
         </div>
 
         <audio class="js-game-audio" src="audio/game-music.mp3"></audio>
+        <audio class="js-round-victory" src=""></audio>
+        <audio class="js-round-defeat" src=""></audio>
+
         <button class="game-start js-play">Play</button>
         <div class="game-modal js-modal">
             <button class="game-modal__button js-modal-close"></button>
@@ -126,7 +130,6 @@
         </div>
 
         <div class="card-shop js-card-shop">
-            <!-- <button class="card-shop__button js-close-shop"></button> -->
             <div class="card-shop__slot">
 
                 <div class="card js-card" draggable="true">
