@@ -1,0 +1,20 @@
+.defeated {
+    transition: opacity 0.5s ease-in, filter 0.5s ease-in;
+    opacity: 0.3;
+    filter: grayscale(100);
+}
+
+
+.enemy-queue {
+    transform: translateY(30%);
+    transition: transform 0.5s ease-in;
+}
+
+
+.friend-queue {
+    transform: translateY(-30%);
+    transition: transform 0.5s ease-in, box-shadow 0.2s ease-in;
+    &:hover {
+        transform: translateY(-30%);
+    }
+}

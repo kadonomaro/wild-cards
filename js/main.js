@@ -2,6 +2,8 @@ import drag from "./drag.js";
 import randomCards from "./randomCards.js";
 import modal from "./modal.js";
 import audio from "./audio.js";
+import battleAction from "./battleAction.js";
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -21,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const gameMoney = document.querySelector('.js-game-money');
 
     let enemyCardArr = [];
+    enemyCards.forEach(card => {
+        enemyCardArr.push(card);
+    });
     let friendCardArr = [];
 
     gameMoney.textContent = 200;
@@ -146,6 +151,10 @@ document.addEventListener('DOMContentLoaded', function () {
             drag.dropNoCost(drag.currentCard, slot, 'card-deck__slot--hovered');
 
             if (cardDeck.querySelectorAll('.js-card').length === 0) {
+
+                enemyCardArr.forEach(card => {
+                    card.style.transitionDelay = '0s';
+                });
                 
                 cardDeck.classList.remove('card-deck--active');
 
@@ -167,6 +176,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 cardDeckTableSlots.forEach(slot => {
                     slot.classList.add('card-deck__slot--no-bordered');
                 });
+
+                battleAction(friendCardArr, enemyCardArr);
                 
             }
             

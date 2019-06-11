@@ -718,4 +718,37 @@
     padding: 10px;
   }
 }
+
+.defeated {
+  -webkit-transition: opacity 0.5s ease-in, -webkit-filter 0.5s ease-in;
+  transition: opacity 0.5s ease-in, -webkit-filter 0.5s ease-in;
+  transition: opacity 0.5s ease-in, filter 0.5s ease-in;
+  transition: opacity 0.5s ease-in, filter 0.5s ease-in, -webkit-filter 0.5s ease-in;
+  opacity: 0.3;
+  -webkit-filter: grayscale(100);
+          filter: grayscale(100);
+}
+
+.enemy-queue {
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+}
+
+.friend-queue {
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
+  -webkit-transition: -webkit-transform 0.5s ease-in, -webkit-box-shadow 0.2s ease-in;
+  transition: -webkit-transform 0.5s ease-in, -webkit-box-shadow 0.2s ease-in;
+  transition: transform 0.5s ease-in, box-shadow 0.2s ease-in;
+  transition: transform 0.5s ease-in, box-shadow 0.2s ease-in, -webkit-transform 0.5s ease-in, -webkit-box-shadow 0.2s ease-in;
+}
+
+.friend-queue:hover {
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
+}
 /*# sourceMappingURL=style.css.map */
