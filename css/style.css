@@ -39,7 +39,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50%;
+  height: 25%;
   background-image: url("../image/table-decals.png");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -433,13 +433,6 @@
           transform: translate(-3px, -3px);
 }
 
-.card--golden-shadow:hover {
-  -webkit-box-shadow: 0 0 12px 5px rgba(255, 153, 0, 0.7);
-          box-shadow: 0 0 12px 5px rgba(255, 153, 0, 0.7);
-  -webkit-transform: translate(-3px, -3px);
-          transform: translate(-3px, -3px);
-}
-
 .card--invisible {
   display: none;
 }
@@ -513,6 +506,7 @@
   width: 8.64%;
   padding-bottom: 8.64%;
   background-image: url("../image/coins.png");
+  background-repeat: no-repeat;
   background-size: contain;
   pointer-events: none;
 }
@@ -522,9 +516,10 @@
   position: absolute;
   bottom: 50%;
   right: 30px;
-  width: 8.64%;
-  padding-bottom: 8.64%;
-  background-image: url("../image/coins.png");
+  width: 6.25%;
+  padding-bottom: 6.25%;
+  background-image: url("../image/dice.png");
+  background-repeat: no-repeat;
   background-size: contain;
   pointer-events: none;
 }

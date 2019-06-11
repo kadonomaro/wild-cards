@@ -119,13 +119,6 @@
     }
 }
 
-.card--golden-shadow {
-    &:hover {
-        box-shadow: 0 0 12px 5px rgba($color: #ff9900, $alpha: 0.7);
-        transform: translate(-3px, -3px);
-    }
-}
-
 .card--invisible {
     display: none;
 }

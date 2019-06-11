@@ -18,6 +18,7 @@
         width: 8.64%;
         padding-bottom: 8.64%;
         background-image: url('../image/coins.png');
+        background-repeat: no-repeat;
         background-size: contain;
         pointer-events: none;
     }
@@ -26,9 +27,10 @@
         position: absolute;
         bottom: 50%;
         right: 30px;
-        width: 8.64%;
-        padding-bottom: 8.64%;
-        background-image: url('../image/coins.png');
+        width: 6.25%;
+        padding-bottom: 6.25%;
+        background-image: url('../image/dice.png');
+        background-repeat: no-repeat;
         background-size: contain;
         pointer-events: none;
     }

@@ -141,6 +141,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         slot.addEventListener('drop', function () {
 
+            drag.currentCard.removeEventListener('mouseenter', AddHoveredClass);
+            drag.currentCard.classList.remove('card--hovered');
             drag.dropNoCost(drag.currentCard, slot, 'card-deck__slot--hovered');
 
             if (cardDeck.querySelectorAll('.js-card').length === 0) {
