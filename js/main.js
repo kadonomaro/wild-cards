@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             hideDOMElement(cardShop, 'card-shop--hidden');
             hoveredCard();
-            audio.play(audio.gameSound, 20);
+            audio.play(audio.gameSound, 100);
 
             for (const slot of cardSlots) {
                 slot.classList.add('card-deck__slot--game-active');

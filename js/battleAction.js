@@ -1,4 +1,5 @@
 function battleAction(friendCards, enemyCards) {
+
     let round = 0;
     let endGamePause = 2000;
     
@@ -56,13 +57,34 @@ function battleAction(friendCards, enemyCards) {
                     }).length;
                     
 
-
+                    endGame();
+                    
                 }, endGamePause);
+
+                
             }
         }, {once: true});
     });
 
 
+}
+
+
+function endGame() {
+    let endGameBlock = document.querySelector('.js-end-game');
+    let endGameTitle = endGameBlock.querySelector('.js-end-game-title');
+    let endGameText = endGameBlock.querySelector('.js-end-game-text');
+    let endGameRestartButton = endGameBlock.querySelector('.js-end-game-restart');
+
+    endGameBlock.style.display = "block";
+    setTimeout(() => {
+        endGameBlock.classList.add('end-game--active');
+    }, 10);
+
+
+    endGameRestartButton.addEventListener('click', () => {
+        document.location.reload(true);
+    });
 }
 
 export default battleAction;
