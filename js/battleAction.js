@@ -57,8 +57,8 @@ function battleAction(friendCards, enemyCards) {
                     }).length;
                     
 
-                    endGame();
-                    
+                    endGame(friendDefeated, enemyDefeated);
+
                 }, endGamePause);
 
                 
@@ -70,11 +70,19 @@ function battleAction(friendCards, enemyCards) {
 }
 
 
-function endGame() {
+function endGame(friendDefeated, enemyDefeated) {
     let endGameBlock = document.querySelector('.js-end-game');
     let endGameTitle = endGameBlock.querySelector('.js-end-game-title');
     let endGameText = endGameBlock.querySelector('.js-end-game-text');
     let endGameRestartButton = endGameBlock.querySelector('.js-end-game-restart');
+
+    if (friendDefeated > enemyDefeated) {
+        endGameTitle.textContent = 'Defeat!';
+        endGameText.textContent = 'You played well, but your opponent was stronger.';
+    } else if (friendDefeated === enemyDefeated) {
+        endGameTitle.textContent = 'Draw!';
+        endGameText.textContent = 'In this battle, the forces were equal. Maybe you should try again?';
+    }
 
     endGameBlock.style.display = "block";
     setTimeout(() => {
