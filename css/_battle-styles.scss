@@ -66,7 +66,6 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: right;
-            // background-image: url('../image/defeat.png');
             pointer-events: none;
         }
     }
@@ -82,7 +81,7 @@
     }
     &__modal--draw {
         &::before {
-            background-image: url('../image/defeat.png');
+            background-image: url('../image/draw.png');
         }
     }
     &__modal-title {
@@ -99,6 +98,8 @@
         user-select: none;
     }
     &__modal-button {
+        position: relative;
+        z-index: 1000;
         display: block;
         margin: 0 auto;
         padding: 10px 20px;

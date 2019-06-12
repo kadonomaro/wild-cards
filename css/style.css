@@ -821,7 +821,7 @@
 }
 
 .end-game__modal--draw::before {
-  background-image: url("../image/defeat.png");
+  background-image: url("../image/draw.png");
 }
 
 .end-game__modal-title {
@@ -848,6 +848,8 @@
 }
 
 .end-game__modal-button {
+  position: relative;
+  z-index: 1000;
   display: block;
   margin: 0 auto;
   padding: 10px 20px;

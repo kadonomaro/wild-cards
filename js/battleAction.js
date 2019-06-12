@@ -1,3 +1,5 @@
+import audio from "./audio.js";
+
 function battleAction(friendCards, enemyCards) {
 
     let round = 0;
@@ -78,15 +80,29 @@ function endGame(friendDefeated, enemyDefeated) {
     let endGameRestartButton = endGameBlock.querySelector('.js-end-game-restart');
 
     if (enemyDefeated > friendDefeated) {
+
+        audio.stop(audio.gameSound);
+        audio.play(audio.victorySound, 100);
         endGameModal.classList.add('end-game__modal--victory');
+
     } else if (friendDefeated > enemyDefeated) {
+
+        audio.stop(audio.gameSound);
+        audio.play(audio.defeatSound, 100);
+
         endGameModal.classList.add('end-game__modal--defeat');
         endGameTitle.textContent = 'Defeat!';
         endGameText.textContent = 'You played well, but your opponent was stronger.';
+
     } else if (friendDefeated === enemyDefeated) {
+
+        audio.stop(audio.gameSound);
+        audio.play(audio.victorySound, 100);
+
         endGameModal.classList.add('end-game__modal--draw');
         endGameTitle.textContent = 'Draw!';
         endGameText.textContent = 'In this battle, the forces were equal. Maybe you should try again?';
+
     }
 
     endGameBlock.style.display = "block";
