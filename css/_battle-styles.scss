@@ -31,6 +31,7 @@
     transition: opacity 0.5s ease-in;
     opacity: 0;
 
+
     &__overlay {
         position: absolute;
         top: 0;
@@ -55,17 +56,47 @@
         text-align: center;
         transform: translate(-50%,-50%);
         box-sizing: border-box;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            right: 10px;
+            width: 50%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+            // background-image: url('../image/defeat.png');
+            pointer-events: none;
+        }
+    }
+    &__modal--victory {
+        &::before {
+            background-image: url('../image/victory.png');
+        }
+    }
+    &__modal--defeat {
+        &::before {
+            background-image: url('../image/defeat.png');
+        }
+    }
+    &__modal--draw {
+        &::before {
+            background-image: url('../image/defeat.png');
+        }
     }
     &__modal-title {
         display: block;
         margin-bottom: 15px;
         font-size: 24px;
         font-weight: bold;
+        user-select: none;
     }
     &__modal-text {
         flex: 1;
         display: block;
         margin-bottom: 10px;
+        user-select: none;
     }
     &__modal-button {
         display: block;

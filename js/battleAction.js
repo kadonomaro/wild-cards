@@ -72,14 +72,19 @@ function battleAction(friendCards, enemyCards) {
 
 function endGame(friendDefeated, enemyDefeated) {
     let endGameBlock = document.querySelector('.js-end-game');
+    let endGameModal = endGameBlock.querySelector('.js-end-game-modal');
     let endGameTitle = endGameBlock.querySelector('.js-end-game-title');
     let endGameText = endGameBlock.querySelector('.js-end-game-text');
     let endGameRestartButton = endGameBlock.querySelector('.js-end-game-restart');
 
-    if (friendDefeated > enemyDefeated) {
+    if (enemyDefeated > friendDefeated) {
+        endGameModal.classList.add('end-game__modal--victory');
+    } else if (friendDefeated > enemyDefeated) {
+        endGameModal.classList.add('end-game__modal--defeat');
         endGameTitle.textContent = 'Defeat!';
         endGameText.textContent = 'You played well, but your opponent was stronger.';
     } else if (friendDefeated === enemyDefeated) {
+        endGameModal.classList.add('end-game__modal--draw');
         endGameTitle.textContent = 'Draw!';
         endGameText.textContent = 'In this battle, the forces were equal. Maybe you should try again?';
     }

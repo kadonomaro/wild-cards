@@ -799,11 +799,40 @@
           box-sizing: border-box;
 }
 
+.end-game__modal::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  width: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  pointer-events: none;
+}
+
+.end-game__modal--victory::before {
+  background-image: url("../image/victory.png");
+}
+
+.end-game__modal--defeat::before {
+  background-image: url("../image/defeat.png");
+}
+
+.end-game__modal--draw::before {
+  background-image: url("../image/defeat.png");
+}
+
 .end-game__modal-title {
   display: block;
   margin-bottom: 15px;
   font-size: 24px;
   font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .end-game__modal-text {
@@ -812,6 +841,10 @@
           flex: 1;
   display: block;
   margin-bottom: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .end-game__modal-button {
