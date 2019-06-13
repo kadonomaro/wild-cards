@@ -5,19 +5,59 @@
     bottom: 0;
     left: 0;
     right: 0;
-    &__left {
-        position: absolute;
-        left: 0;
-        width: 60%;
-        height: 100%;
-        background-color: #505050;
+    transition: transform 0.2s;
+    will-change: transform;
+    &__title {
+        width: 70%;
+        margin: 20% auto 0;
+        background-image: url('../image/title.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        &::before {
+            content: '';
+            display: block;
+            padding-bottom: 21.428%;
+        }
     }
+    &__left,
     &__right {
         position: absolute;
+        height: 100%;
+        background-image: url('../image/paper-tile.jpg');
+        transition: transform 1.5s ease-in;
+        will-change: transform;
+    }
+    &__left {
+        left: 0;
+        width: 60%;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        box-shadow: 5px 0 10px rgba($color: #000000, $alpha: 0.3);
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-image: url('../image/stamp.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateY(-50%);
+        }
+    }
+    &__left--hidden {
+        transform: translateX(-100%);
+    }
+    &__right {
         right: 0;
         width: 50%;
-        height: 100%;
-        background-color: #606060;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        transition-delay: 0.5s;
+    }
+    &__right--hidden {
+        transform: translateX(100%);
     }
 }
 

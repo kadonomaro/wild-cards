@@ -5,22 +5,78 @@
   bottom: 0;
   left: 0;
   right: 0;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  will-change: transform;
+}
+
+.preloader__title {
+  width: 70%;
+  margin: 20% auto 0;
+  background-image: url("../image/title.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.preloader__title::before {
+  content: '';
+  display: block;
+  padding-bottom: 21.428%;
+}
+
+.preloader__left, .preloader__right {
+  position: absolute;
+  height: 100%;
+  background-image: url("../image/paper-tile.jpg");
+  -webkit-transition: -webkit-transform 1.5s ease-in;
+  transition: -webkit-transform 1.5s ease-in;
+  transition: transform 1.5s ease-in;
+  transition: transform 1.5s ease-in, -webkit-transform 1.5s ease-in;
+  will-change: transform;
 }
 
 .preloader__left {
-  position: absolute;
   left: 0;
   width: 60%;
-  height: 100%;
-  background-color: #505050;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  -webkit-box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.preloader__left::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background-image: url("../image/stamp.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.preloader__left--hidden {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 .preloader__right {
-  position: absolute;
   right: 0;
   width: 50%;
-  height: 100%;
-  background-color: #606060;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.preloader__right--hidden {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .page {
