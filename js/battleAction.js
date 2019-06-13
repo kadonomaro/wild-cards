@@ -3,7 +3,7 @@ import audio from "./audio.js";
 function battleAction(friendCards, enemyCards) {
 
     let round = 0;
-    let endGamePause = 2000;
+    let endGamePause = 1500;
     
     friendCards.forEach(card => {
         card.addEventListener('click', () => {

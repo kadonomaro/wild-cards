@@ -3,11 +3,12 @@ import randomCards from "./randomCards.js";
 import modal from "./modal.js";
 import audio from "./audio.js";
 import battleAction from "./battleAction.js";
+import preloader from "./preloader.js";
 
 
 
 document.addEventListener('DOMContentLoaded', function () {
-
+    preloader();
     const cards = document.querySelectorAll('.js-card');
     const enemyCards = document.querySelectorAll('.js-enemy-card');
 
