@@ -83,6 +83,7 @@
     }
 }
 
+
 .card--golden {
     color: #ffffff;
     text-shadow: 0 0 3px rgba($color: #996300, $alpha: 1.0);
@@ -109,6 +110,25 @@
         transform: translate(-3px, -3px);
     }
 }
+
+
+.card--mage {
+    color: #aac0ff;
+    text-shadow: 0 0 3px rgba($color: #000f99, $alpha: 1.0);
+    box-shadow: 0 0 10px 3px rgba($color: #00b0ff, $alpha: 0.7);
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba($color: #00b0ff, $alpha: 0.1);
+        border-radius: inherit;
+        pointer-events: none;
+    }
+}
+
 
 .card--shadow {
     box-shadow: 0 0 7px rgba($color: #000000, $alpha: 0.3);

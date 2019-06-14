@@ -1,3 +1,5 @@
+import audio from "./audio.js";
+
 let drag = {
     cardArray: [],
     currentCard: null,
@@ -37,6 +39,7 @@ let drag = {
         if (cardSlot.children.length === 0 && +money.textContent >= +currentCost) {
 
             cardSlot.append(card);
+            audio.play(audio.cardDrop, 70);
 
             this.cardArray = this.cardArray.filter(item => {
                 if (card !== item) {
@@ -62,6 +65,7 @@ let drag = {
         if (cardSlot.children.length === 0 ) {
 
             cardSlot.append(card);
+            audio.play(audio.cardDrop, 70);
 
             this.cardArray = this.cardArray.filter(item => {
                 if (card !== item) {

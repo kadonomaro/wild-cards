@@ -28,6 +28,8 @@ let randomCards = {
                     cardTitle = separateText(cardTitle[1], '.png');
                     cardTitle = cardTitle[0];
                     cardTitle = cardTitle.charAt(0).toUpperCase() + cardTitle.slice(1);
+
+
                     
 
                     switch (true) {
@@ -38,7 +40,7 @@ let randomCards = {
                             break;
                         case (cardStr.textContent <= 6):
                             cardTitle = 'Little ' + cardTitle;
-                            cardCost.textContent = 15;
+                            cardCost.textContent = 10;
                             break;
                         case (cardStr.textContent > 6):
                             cardTitle = 'Strong ' + cardTitle;
@@ -46,6 +48,14 @@ let randomCards = {
                             break;
                     }
                     cardImage.textContent = cardTitle;
+
+                    if (cardStr.textContent === '0') {
+                        cardImage.style.backgroundImage = `url('${json.mage}')`;
+                        card.classList.add('card--mage');
+                        cardDef.textContent = '0';
+                        cardCost.textContent = 50;
+                        cardImage.textContent = 'Mage Joe Noname';
+                    }
 
                     
                 });

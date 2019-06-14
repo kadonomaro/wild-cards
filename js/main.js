@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
             drag.leave(slot, 'card-deck__slot--hovered');
         });
         slot.addEventListener('drop', function(){
+
             drag.drop(drag.currentCard, slot, 'card-deck__slot--hovered', gameMoney);
             drag.currentCard.classList.add('card-deck__card');
         });
@@ -184,7 +185,6 @@ document.addEventListener('DOMContentLoaded', function () {
             
         });
     }
-
 });
 
 

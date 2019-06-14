@@ -498,6 +498,25 @@
           transform: translate(-3px, -3px);
 }
 
+.card--mage {
+  color: #aac0ff;
+  text-shadow: 0 0 3px #000f99;
+  -webkit-box-shadow: 0 0 10px 3px rgba(0, 176, 255, 0.7);
+          box-shadow: 0 0 10px 3px rgba(0, 176, 255, 0.7);
+}
+
+.card--mage::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 176, 255, 0.1);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
 .card--shadow {
   -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
