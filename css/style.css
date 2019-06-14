@@ -271,7 +271,7 @@
           transform: rotate(30deg);
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px), screen and (max-height: 768px) {
   .game {
     padding: 10px;
     padding-right: 150px;
@@ -355,7 +355,7 @@
           transform: rotateY(0deg);
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px), screen and (max-height: 768px) {
   .enemy-deck__slot {
     width: 90px;
     height: 135px;
@@ -534,7 +534,7 @@
   display: none;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px), screen and (max-height: 768px) {
   .card {
     width: 90px;
     height: 135px;
@@ -609,7 +609,7 @@
   margin-bottom: -40px;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px), screen and (max-height: 768px) {
   .card-table {
     margin: 20px;
   }
@@ -756,7 +756,7 @@
   display: inline-flex;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px), screen and (max-height: 768px) {
   .card-deck__slot {
     width: 90px;
     height: 135px;
@@ -792,7 +792,7 @@
           transform: translateX(120%);
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px), screen and (max-height: 768px) {
   .card-shop {
     max-height: calc(100vh - 20px);
     margin-right: 5px;

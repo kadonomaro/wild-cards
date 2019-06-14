@@ -23,7 +23,7 @@
 
 
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px), screen and (max-height: 768px) {
     .card-shop {
         max-height: calc(100vh - 20px);
         margin-right: 5px;
