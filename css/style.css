@@ -30,10 +30,10 @@
   position: absolute;
   height: 100%;
   background-image: url("../image/paper-tile.jpg");
-  -webkit-transition: -webkit-transform 1.5s ease-in;
-  transition: -webkit-transform 1.5s ease-in;
-  transition: transform 1.5s ease-in;
-  transition: transform 1.5s ease-in, -webkit-transform 1.5s ease-in;
+  -webkit-transition: -webkit-transform 1.2s ease-in;
+  transition: -webkit-transform 1.2s ease-in;
+  transition: transform 1.2s ease-in;
+  transition: transform 1.2s ease-in, -webkit-transform 1.2s ease-in;
   will-change: transform;
 }
 
@@ -70,8 +70,8 @@
   width: 50%;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .preloader__right--hidden {
@@ -517,6 +517,17 @@
   pointer-events: none;
 }
 
+.card--mage .card__bottom {
+  background-color: rgba(0, 176, 255, 0.2);
+}
+
+.card--mage-shadow:hover {
+  -webkit-box-shadow: 0 0 12px 5px rgba(0, 176, 255, 0.7);
+          box-shadow: 0 0 12px 5px rgba(0, 176, 255, 0.7);
+  -webkit-transform: translate(-3px, -3px);
+          transform: translate(-3px, -3px);
+}
+
 .card--shadow {
   -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
@@ -535,6 +546,11 @@
 
 .card--invisible {
   display: none;
+}
+
+.card--hold {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .card--hovered {

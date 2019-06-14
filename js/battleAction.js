@@ -12,6 +12,9 @@ function battleAction(friendCards, enemyCards) {
             if (card.classList.contains('card--golden-shadow')) {
                 card.classList.remove('card--golden-shadow');
             }
+            if (card.classList.contains('card--mage-shadow')) {
+                card.classList.remove('card--mage-shadow');
+            }
 
             let queue = Math.random().toFixed(2);
             let cardStr = card.querySelector('.js-card-str');

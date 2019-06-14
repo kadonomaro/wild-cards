@@ -35,11 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
     randomCards.generate(enemyCards);
 
     playButton.addEventListener('click', function (evt) {
-        
+        evt.preventDefault();
 
         if (drag.cardArray.length === 6) {
+            audio.play(audio.gameSound, 100);
 
-            evt.preventDefault();
             this.style.opacity = '0';
             setTimeout(() => {
                 this.style.display = 'none';
@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             hideDOMElement(cardShop, 'card-shop--hidden');
             hoveredCard();
-            audio.play(audio.gameSound, 100);
 
             for (const slot of cardSlots) {
                 slot.classList.add('card-deck__slot--game-active');
@@ -62,12 +61,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
             enemyCards.forEach((card, index) => {
+                //Adding str and def to cards if the deck has a mage
+                if (card.classList.contains('card--mage')) {
+
+                    enemyCards.forEach(card => {
+                        let cardStr = +card.querySelector('.js-card-str').textContent;
+                        let cardDef = +card.querySelector('.js-card-def').textContent;
+                        cardStr += 3;
+                        cardDef += 3;
+                        card.querySelector('.js-card-str').textContent = cardStr;
+                        card.querySelector('.js-card-def').textContent = cardDef;
+                    });
+
+                }
                 card.dataset.str = card.querySelector('.js-card-str').textContent;
                 card.dataset.def = card.querySelector('.js-card-def').textContent;
                 card.dataset.id = index;
             });
 
+
             cards.forEach(card => {
+                //Adding str and def to cards if the deck has a mage
+                if (card.classList.contains('card--mage')) {
+
+                    cards.forEach(card => {
+                        let cardStr = +card.querySelector('.js-card-str').textContent;
+                        let cardDef = +card.querySelector('.js-card-def').textContent;
+                        cardStr += 3;
+                        cardDef += 3;
+                        card.querySelector('.js-card-str').textContent = cardStr;
+                        card.querySelector('.js-card-def').textContent = cardDef;
+                    });
+                }
                 card.dataset.str = card.querySelector('.js-card-str').textContent;
                 card.dataset.def = card.querySelector('.js-card-def').textContent;
             });
@@ -161,7 +186,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 cardDeck.classList.remove('card-deck--active');
 
                 let cards = cardDeckTable.querySelectorAll('.js-card');
+
                 cards.forEach((card, index) => {
+
                     friendCardArr.push(card);
                     card.dataset.id = index;
                     card.removeEventListener('mouseenter', AddHoveredClass);
@@ -172,6 +199,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (card.classList.contains('card--golden')) {
                         card.classList.remove('card--shadow');
                         card.classList.add('card--golden-shadow');
+                    }
+                    if (card.classList.contains('card--mage')) {
+                        card.classList.remove('card--shadow');
+                        card.classList.add('card--mage-shadow');
                     }
                 });
 

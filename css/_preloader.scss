@@ -24,7 +24,7 @@
         position: absolute;
         height: 100%;
         background-image: url('../image/paper-tile.jpg');
-        transition: transform 1.5s ease-in;
+        transition: transform 1.2s ease-in;
         will-change: transform;
     }
     &__left {
@@ -54,7 +54,7 @@
         width: 50%;
         border-top-left-radius: 30px;
         border-bottom-left-radius: 30px;
-        transition-delay: 0.5s;
+        transition-delay: 0.3s;
     }
     &__right--hidden {
         transform: translateX(100%);

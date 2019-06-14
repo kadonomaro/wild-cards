@@ -53,7 +53,7 @@ let randomCards = {
                         cardImage.style.backgroundImage = `url('${json.mage}')`;
                         card.classList.add('card--mage');
                         cardDef.textContent = '0';
-                        cardCost.textContent = 50;
+                        cardCost.textContent = 90;
                         cardImage.textContent = 'Mage Joe Noname';
                     }
 

@@ -103,7 +103,6 @@
 .card--golden .card__bottom {
     background-color: rgba($color: #ff9900, $alpha: 0.3);
 }
-
 .card--golden-shadow {
     &:hover {
         box-shadow: 0 0 12px 5px rgba($color: #ff9900, $alpha: 0.7);
@@ -128,6 +127,15 @@
         pointer-events: none;
     }
 }
+.card--mage .card__bottom {
+    background-color: rgba($color: #00b0ff, $alpha: 0.2);
+}
+.card--mage-shadow {
+    &:hover {
+        box-shadow: 0 0 12px 5px rgba($color: #00b0ff, $alpha: 0.7);
+        transform: translate(-3px, -3px);
+    }
+}
 
 
 .card--shadow {
@@ -141,6 +149,10 @@
 
 .card--invisible {
     display: none;
+}
+
+.card--hold {
+    box-shadow: none;
 }
 
 .card--hovered {
