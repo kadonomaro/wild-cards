@@ -1,4 +1,5 @@
 import audio from "./audio.js";
+import getData from "./getData.js";
 
 function battleAction(friendCards, enemyCards) {
 
@@ -76,47 +77,98 @@ function battleAction(friendCards, enemyCards) {
 
 
 function endGame(friendDefeated, enemyDefeated) {
+
+    let localization = 'en';
+
+    let data = getData('js/data.json');
     let endGameBlock = document.querySelector('.js-end-game');
     let endGameModal = endGameBlock.querySelector('.js-end-game-modal');
     let endGameTitle = endGameBlock.querySelector('.js-end-game-title');
     let endGameText = endGameBlock.querySelector('.js-end-game-text');
     let endGameRestartButton = endGameBlock.querySelector('.js-end-game-restart');
 
-    if (enemyDefeated > friendDefeated) {
+    data.then(json => {
 
-        audio.stop(audio.gameSound);
-        audio.play(audio.victorySound, 100);
-        endGameModal.classList.add('end-game__modal--victory');
+        console.log(json[localization].victoryTitle);
 
-    } else if (friendDefeated > enemyDefeated) {
+        if (enemyDefeated > friendDefeated) {
 
-        audio.stop(audio.gameSound);
-        audio.play(audio.defeatSound, 100);
+            audio.stop(audio.gameSound);
+            audio.play(audio.victorySound, 100);
+            
+            endGameModal.classList.add('end-game__modal--victory');
+            endGameTitle.textContent = 'Congratulations!';
+            endGameText.textContent = 'You won a fair victory over your opponent. It is worthy of respect.';
+    
+        } else if (friendDefeated > enemyDefeated) {
+    
+            audio.stop(audio.gameSound);
+            audio.play(audio.defeatSound, 100);
+    
+            endGameModal.classList.add('end-game__modal--defeat');
+            endGameTitle.textContent = 'Defeat!';
+            endGameText.textContent = 'You played well, but your opponent was stronger.';
+    
+        } else if (friendDefeated === enemyDefeated) {
+    
+            audio.stop(audio.gameSound);
+            audio.play(audio.victorySound, 100);
+    
+            endGameModal.classList.add('end-game__modal--draw');
+            endGameTitle.textContent = 'Draw!';
+            endGameText.textContent = 'In this battle, the forces were equal. Maybe you should try again?';
+    
+        }
+    
+        endGameBlock.style.display = "block";
+        setTimeout(() => {
+            endGameBlock.classList.add('end-game--active');
+        }, 10);
+    
+    
+        endGameRestartButton.addEventListener('click', () => {
+            document.location.reload(true);
+        });
 
-        endGameModal.classList.add('end-game__modal--defeat');
-        endGameTitle.textContent = 'Defeat!';
-        endGameText.textContent = 'You played well, but your opponent was stronger.';
-
-    } else if (friendDefeated === enemyDefeated) {
-
-        audio.stop(audio.gameSound);
-        audio.play(audio.victorySound, 100);
-
-        endGameModal.classList.add('end-game__modal--draw');
-        endGameTitle.textContent = 'Draw!';
-        endGameText.textContent = 'In this battle, the forces were equal. Maybe you should try again?';
-
-    }
-
-    endGameBlock.style.display = "block";
-    setTimeout(() => {
-        endGameBlock.classList.add('end-game--active');
-    }, 10);
-
-
-    endGameRestartButton.addEventListener('click', () => {
-        document.location.reload(true);
     });
+
+
+
+    // if (enemyDefeated > friendDefeated) {
+
+    //     audio.stop(audio.gameSound);
+    //     audio.play(audio.victorySound, 100);
+    //     endGameModal.classList.add('end-game__modal--victory');
+
+    // } else if (friendDefeated > enemyDefeated) {
+
+    //     audio.stop(audio.gameSound);
+    //     audio.play(audio.defeatSound, 100);
+
+    //     endGameModal.classList.add('end-game__modal--defeat');
+    //     endGameTitle.textContent = 'Defeat!';
+    //     endGameText.textContent = 'You played well, but your opponent was stronger.';
+
+    // } else if (friendDefeated === enemyDefeated) {
+
+    //     audio.stop(audio.gameSound);
+    //     audio.play(audio.victorySound, 100);
+
+    //     endGameModal.classList.add('end-game__modal--draw');
+    //     endGameTitle.textContent = 'Draw!';
+    //     endGameText.textContent = 'In this battle, the forces were equal. Maybe you should try again?';
+
+    // }
+
+    // endGameBlock.style.display = "block";
+    // setTimeout(() => {
+    //     endGameBlock.classList.add('end-game--active');
+    // }, 10);
+
+
+    // endGameRestartButton.addEventListener('click', () => {
+    //     document.location.reload(true);
+    // });
 }
 
 export default battleAction;

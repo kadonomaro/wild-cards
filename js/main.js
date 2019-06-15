@@ -80,10 +80,10 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
 
-            cards.forEach(card => {
-                card.dataset.str = card.querySelector('.js-card-str').textContent;
-                card.dataset.def = card.querySelector('.js-card-def').textContent;
-            });
+            // cards.forEach(card => {
+            //     card.dataset.str = card.querySelector('.js-card-str').textContent;
+            //     card.dataset.def = card.querySelector('.js-card-def').textContent;
+            // });
             
         } else {
 
@@ -177,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 let cards = cardDeckTable.querySelectorAll('.js-card');
 
                 cards.forEach((card, index) => {
+                    
                     //Adding str and def to cards if the deck has a mage
                     if (card.classList.contains('card--mage')) {
 
@@ -190,8 +191,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
                     }
 
+
                     friendCardArr.push(card);
-                    card.dataset.id = index;
+
+                    friendCardArr.forEach((card, index) => {
+                        card.dataset.str = card.querySelector('.js-card-str').textContent;
+                        card.dataset.def = card.querySelector('.js-card-def').textContent;
+                        card.dataset.id = index;
+                    });
+                    
                     card.removeEventListener('mouseenter', AddHoveredClass);
                     card.classList.add('card--shadow');
                     if (card.classList.contains('card--hovered')) {
