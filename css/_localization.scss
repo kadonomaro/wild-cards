@@ -1,7 +1,7 @@
 .localization {
-
+    font-size: 0;
     &__label {
-
+        display: inline-block;
     }
     &__lang {
         position: absolute;
@@ -12,14 +12,22 @@
         clip: rect(1px, 1px, 1px, 1px);
         border: 0;
         overflow: hidden;
+        
         &:checked + .localization__lang-fake {
-            border-color: green;
+            filter: grayscale(0);
         }
     }
     &__lang-fake {
         display: block;
         width: 50px;
         height: 30px;
-        border: 1px solid red;
+        background-image: url('../image/icons/localization.jpg');
+        background-position: 0;
+        background-repeat: no-repeat;
+        filter: grayscale(1);
+        transition: filter 0.2s ease-in;
+    }
+    &__lang-fake--ru {
+        background-position: -50px;
     }
 }

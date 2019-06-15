@@ -95,6 +95,22 @@
           transform: translateX(100%);
 }
 
+.preloader__settings {
+  margin: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
+}
+
+.localization {
+  font-size: 0;
+}
+
+.localization__label {
+  display: inline-block;
+}
+
 .localization__lang {
   position: absolute;
   width: 1px;
@@ -107,14 +123,27 @@
 }
 
 .localization__lang:checked + .localization__lang-fake {
-  border-color: green;
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 
 .localization__lang-fake {
   display: block;
   width: 50px;
   height: 30px;
-  border: 1px solid red;
+  background-image: url("../image/icons/localization.jpg");
+  background-position: 0;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -webkit-transition: -webkit-filter 0.2s ease-in;
+  transition: -webkit-filter 0.2s ease-in;
+  transition: filter 0.2s ease-in;
+  transition: filter 0.2s ease-in, -webkit-filter 0.2s ease-in;
+}
+
+.localization__lang-fake--ru {
+  background-position: -50px;
 }
 
 .page {

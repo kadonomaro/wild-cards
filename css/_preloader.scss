@@ -73,7 +73,10 @@
         transform: translateX(100%);
     }
     &__settings {
-        
+        margin: 30px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: inset 0 0 7px rgba($color: #000000, $alpha: 0.3);
     }
     &__localization {
 
