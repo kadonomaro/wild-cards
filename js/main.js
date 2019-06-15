@@ -81,18 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
             cards.forEach(card => {
-                //Adding str and def to cards if the deck has a mage
-                if (card.classList.contains('card--mage')) {
-
-                    cards.forEach(card => {
-                        let cardStr = +card.querySelector('.js-card-str').textContent;
-                        let cardDef = +card.querySelector('.js-card-def').textContent;
-                        cardStr += 3;
-                        cardDef += 3;
-                        card.querySelector('.js-card-str').textContent = cardStr;
-                        card.querySelector('.js-card-def').textContent = cardDef;
-                    });
-                }
                 card.dataset.str = card.querySelector('.js-card-str').textContent;
                 card.dataset.def = card.querySelector('.js-card-def').textContent;
             });
@@ -178,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
             drag.dropNoCost(drag.currentCard, slot, 'card-deck__slot--hovered');
 
             if (cardDeck.querySelectorAll('.js-card').length === 0) {
+                
 
                 enemyCardArr.forEach(card => {
                     card.style.transitionDelay = '0s';
@@ -188,6 +177,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 let cards = cardDeckTable.querySelectorAll('.js-card');
 
                 cards.forEach((card, index) => {
+                    //Adding str and def to cards if the deck has a mage
+                    if (card.classList.contains('card--mage')) {
+
+                        cards.forEach(card => {
+                            let cardStr = +card.querySelector('.js-card-str').textContent;
+                            let cardDef = +card.querySelector('.js-card-def').textContent;
+                            cardStr += 3;
+                            cardDef += 3;
+                            card.querySelector('.js-card-str').textContent = cardStr;
+                            card.querySelector('.js-card-def').textContent = cardDef;
+                        });
+                    }
 
                     friendCardArr.push(card);
                     card.dataset.id = index;

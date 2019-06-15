@@ -499,7 +499,7 @@
 }
 
 .card--mage {
-  color: #aac0ff;
+  color: #aadddd;
   text-shadow: 0 0 3px #000f99;
   -webkit-box-shadow: 0 0 10px 3px rgba(0, 176, 255, 0.7);
           box-shadow: 0 0 10px 3px rgba(0, 176, 255, 0.7);
