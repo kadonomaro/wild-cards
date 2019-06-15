@@ -9,7 +9,7 @@
     will-change: transform;
     &__title {
         width: 70%;
-        margin: 20% auto 0;
+        margin: 20% auto 20px;
         background-image: url('../image/title.png');
         background-size: contain;
         background-repeat: no-repeat;
@@ -19,12 +19,29 @@
             padding-bottom: 21.428%;
         }
     }
+    &__subtitle {
+        display: table;
+        margin: 0 auto;
+        padding: 10px;
+        color: #cecece;
+        font-size: 18px;
+        text-align: center;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+        border-radius: 5px;
+        user-select: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in;
+        &:hover {
+            background-color: rgba($color: #000000, $alpha: 0.4);
+        }
+    }
     &__author {
         position: absolute;
         bottom: 0;
         display: block;
         padding: 10px;
         color: #505050;
+        user-select: none;
     }
     &__link {
         color: #ffeeaa;
@@ -73,16 +90,12 @@
         transform: translateX(100%);
     }
     &__settings {
+        display: table;
         margin: 30px;
+        margin-left: auto;
         padding: 10px;
         border-radius: 5px;
         box-shadow: inset 0 0 7px rgba($color: #000000, $alpha: 0.3);
     }
-    &__localization {
-
-    }
 }
 
-.preloader--hidden {
-
-}

@@ -116,8 +116,8 @@ function endGame(friendDefeated, enemyDefeated) {
             endGameText.textContent = json[localization].drawText;
 
         }
-        
-        endGameRestartButton.textContent = json[localization].button;
+
+        endGameRestartButton.textContent = json[localization].restartButton;
         endGameBlock.style.display = "block";
         setTimeout(() => {
             endGameBlock.classList.add('end-game--active');

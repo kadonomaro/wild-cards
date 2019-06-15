@@ -23,7 +23,8 @@
     "defence": [2, 2, 4, 4, 6, 6, 8, 10],
 
     "en": {
-        "button": "Restart",
+        "playModal": "You must select cards first",
+        "restartButton": "Restart",
         "victoryTitle": "Congratulations!",
         "victoryText": "You won a fair victory over your opponent. It is worthy of respect.",
         "defeatTitle": "Defeat!",
@@ -32,7 +33,8 @@
         "drawText": "In this battle, the forces were equal. Maybe you should try again?"
     },
     "ru": {
-        "button": "Заного",
+        "playModal": "Для начала игры нужно выбрать карты",
+        "restartButton": "Заного",
         "victoryTitle": "Поздравляем!",
         "victoryText": "Вы одержали честную победу над вашим соперником. Это достойно уважения.",
         "defeatTitle": "Поражение!",

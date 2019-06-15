@@ -5,8 +5,9 @@ function preloader() {
     let preloaderBlock = document.querySelector('.preloader');
     let preloaderLeft = preloaderBlock.querySelector('.js-pre-left');
     let preloaderRight = preloaderBlock.querySelector('.js-pre-right');
+    let preloaderStart = preloaderBlock.querySelector('.js-pre-start');
 
-    preloaderLeft.addEventListener('click', function () {
+    preloaderStart.addEventListener('click', function () {
         audio.play(audio.preloaderBox, 100);
         preloaderLeft.classList.add('preloader__left--hidden');
         preloaderRight.classList.add('preloader__right--hidden');
