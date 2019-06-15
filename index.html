@@ -29,13 +29,35 @@
 <body class="page">
 
     <div class="preloader">
-        <div class="preloader__right js-pre-right"></div>
+
+        <div class="preloader__right js-pre-right">
+            <div class="preloader__settings">
+                <div class="preloader__localization">
+                    <form class="localization">
+                        <label class="localization__label">
+                            <input class="localization__lang js-lang" type="radio" name="localization-lang" value="en" checked>
+                            <span class="localization__lang-fake"></span>
+                        </label>
+                        <label class="localization__label">
+                            <input class="localization__lang js-lang" type="radio" name="localization-lang" value="ru">
+                            <span class="localization__lang-fake"></span>
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div class="preloader__left js-pre-left">
             <div class="preloader__title"></div>
+            <span class="preloader__author">
+                Developed by <a href="https://github.com/kadonomaro/Main" class="preloader__link">Kadonomaro</a> 2019
+            </span>
         </div>
-    </div>
+    </div><!--preloader-->
+
 
     <div class="game">
+
         <div class="game-background">
             <div class="game-background__item game-background__item--paper"></div>
         </div>
@@ -347,7 +369,7 @@
             </div>
         </div>
 
-    </div>
+    </div><!--game-->
     
     <script src="js/main.js" type="module"></script>
 </body>

@@ -1,0 +1,25 @@
+.localization {
+
+    &__label {
+
+    }
+    &__lang {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        border: 0;
+        overflow: hidden;
+        &:checked + .localization__lang-fake {
+            border-color: green;
+        }
+    }
+    &__lang-fake {
+        display: block;
+        width: 50px;
+        height: 30px;
+        border: 1px solid red;
+    }
+}

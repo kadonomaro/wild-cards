@@ -78,8 +78,7 @@ function battleAction(friendCards, enemyCards) {
 
 function endGame(friendDefeated, enemyDefeated) {
 
-    let localization = 'en';
-
+    let localization = localStorage.getItem('lang') || 'en';
     let data = getData('js/data.json');
     let endGameBlock = document.querySelector('.js-end-game');
     let endGameModal = endGameBlock.querySelector('.js-end-game-modal');
@@ -89,43 +88,42 @@ function endGame(friendDefeated, enemyDefeated) {
 
     data.then(json => {
 
-        console.log(json[localization].victoryTitle);
-
         if (enemyDefeated > friendDefeated) {
-
+            //if game victory
             audio.stop(audio.gameSound);
             audio.play(audio.victorySound, 100);
-            
             endGameModal.classList.add('end-game__modal--victory');
-            endGameTitle.textContent = 'Congratulations!';
-            endGameText.textContent = 'You won a fair victory over your opponent. It is worthy of respect.';
+
+            endGameTitle.textContent = json[localization].victoryTitle;
+            endGameText.textContent = json[localization].victoryText;
     
         } else if (friendDefeated > enemyDefeated) {
-    
+            //if game defeat
             audio.stop(audio.gameSound);
             audio.play(audio.defeatSound, 100);
-    
             endGameModal.classList.add('end-game__modal--defeat');
-            endGameTitle.textContent = 'Defeat!';
-            endGameText.textContent = 'You played well, but your opponent was stronger.';
+
+            endGameTitle.textContent = json[localization].defeatTitle;
+            endGameText.textContent = json[localization].defeatText;
     
         } else if (friendDefeated === enemyDefeated) {
-    
+            //if game draw
             audio.stop(audio.gameSound);
             audio.play(audio.victorySound, 100);
-    
             endGameModal.classList.add('end-game__modal--draw');
-            endGameTitle.textContent = 'Draw!';
-            endGameText.textContent = 'In this battle, the forces were equal. Maybe you should try again?';
-    
+
+            endGameTitle.textContent = json[localization].drawTitle;
+            endGameText.textContent = json[localization].drawText;
+
         }
-    
+        
+        endGameRestartButton.textContent = json[localization].button;
         endGameBlock.style.display = "block";
         setTimeout(() => {
             endGameBlock.classList.add('end-game--active');
         }, 10);
     
-    
+
         endGameRestartButton.addEventListener('click', () => {
             document.location.reload(true);
         });

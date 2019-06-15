@@ -6,8 +6,8 @@ import battleAction from "./battleAction.js";
 import preloader from "./preloader.js";
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
+
     preloader();
     const cards = document.querySelectorAll('.js-card');
     const enemyCards = document.querySelectorAll('.js-enemy-card');
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         card.dataset.def = card.querySelector('.js-card-def').textContent;
                         card.dataset.id = index;
                     });
-                    
+
                     card.removeEventListener('mouseenter', AddHoveredClass);
                     card.classList.add('card--shadow');
                     if (card.classList.contains('card--hovered')) {

@@ -26,6 +26,19 @@
   padding-bottom: 21.428%;
 }
 
+.preloader__author {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  padding: 10px;
+  color: #505050;
+}
+
+.preloader__link {
+  color: #ffeeaa;
+  text-decoration: none;
+}
+
 .preloader__left, .preloader__right {
   position: absolute;
   height: 100%;
@@ -68,15 +81,40 @@
 .preloader__right {
   right: 0;
   width: 50%;
+  padding-left: 10%;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .preloader__right--hidden {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
+}
+
+.localization__lang {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  border: 0;
+  overflow: hidden;
+}
+
+.localization__lang:checked + .localization__lang-fake {
+  border-color: green;
+}
+
+.localization__lang-fake {
+  display: block;
+  width: 50px;
+  height: 30px;
+  border: 1px solid red;
 }
 
 .page {

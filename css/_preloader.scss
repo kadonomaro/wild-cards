@@ -19,6 +19,17 @@
             padding-bottom: 21.428%;
         }
     }
+    &__author {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        padding: 10px;
+        color: #505050;
+    }
+    &__link {
+        color: #ffeeaa;
+        text-decoration: none;
+    }
     &__left,
     &__right {
         position: absolute;
@@ -52,12 +63,20 @@
     &__right {
         right: 0;
         width: 50%;
+        padding-left: 10%;
         border-top-left-radius: 30px;
         border-bottom-left-radius: 30px;
         transition-delay: 0.3s;
+        box-sizing: border-box;
     }
     &__right--hidden {
         transform: translateX(100%);
+    }
+    &__settings {
+        
+    }
+    &__localization {
+
     }
 }
 

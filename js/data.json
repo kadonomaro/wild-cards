@@ -30,5 +30,14 @@
         "defeatText": "You played well, but your opponent was stronger.",
         "drawTitle": "Draw!",
         "drawText": "In this battle, the forces were equal. Maybe you should try again?"
+    },
+    "ru": {
+        "button": "Заного",
+        "victoryTitle": "Поздравляем!",
+        "victoryText": "Вы одержали честную победу над вашим соперником. Это достойно уважения.",
+        "defeatTitle": "Поражение!",
+        "defeatText": "Вы сражались очень хорошо, но ваш оппонент оказался сильнее.",
+        "drawTitle": "Ничья!",
+        "drawText": "В этой битве, силы оказались равными. Может стоит попробовать еще раз?"
     }
 }
