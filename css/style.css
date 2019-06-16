@@ -28,6 +28,7 @@
 
 .preloader__subtitle {
   display: table;
+  min-width: 110px;
   margin: 0 auto;
   padding: 10px;
   color: #cecece;
@@ -42,6 +43,8 @@
   cursor: pointer;
   -webkit-transition: background-color 0.2s ease-in;
   transition: background-color 0.2s ease-in;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .preloader__subtitle:hover {
@@ -490,7 +493,7 @@
           flex-grow: 1;
   display: block;
   color: inherit;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   line-height: 1.1;
   text-align: center;

@@ -1,5 +1,6 @@
 let modal = {
     
+
     modalBlock: document.querySelector('.js-modal'),
     modalCloseButton: document.querySelector('.js-modal-close'),
     openClass: '',
@@ -30,5 +31,6 @@ let modal = {
         }
     }
 };
+
 
 export default modal;

@@ -21,6 +21,7 @@
     }
     &__subtitle {
         display: table;
+        min-width: 110px;
         margin: 0 auto;
         padding: 10px;
         color: #cecece;
@@ -31,6 +32,7 @@
         user-select: none;
         cursor: pointer;
         transition: background-color 0.2s ease-in;
+        box-sizing: border-box;
         &:hover {
             background-color: rgba($color: #000000, $alpha: 0.4);
         }
