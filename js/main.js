@@ -79,11 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 card.dataset.id = index;
             });
 
-
-            // cards.forEach(card => {
-            //     card.dataset.str = card.querySelector('.js-card-str').textContent;
-            //     card.dataset.def = card.querySelector('.js-card-def').textContent;
-            // });
             
         } else {
 

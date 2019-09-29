@@ -18,7 +18,6 @@
     &__card {
         box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.5);
         transform-style: preserve-3d;
-        backface-visibility: hidden;
         transform: rotateY(-180deg);
         transition: transform 1.2s ease-in;
         &::before {

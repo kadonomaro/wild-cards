@@ -29,9 +29,6 @@ let randomCards = {
                     cardTitle = cardTitle[0];
                     cardTitle = cardTitle.charAt(0).toUpperCase() + cardTitle.slice(1);
 
-
-                    
-
                     switch (true) {
                         case (cardStr.textContent >= 10 && cardDef.textContent >= 10):
                             cardTitle = 'Strong armored ' + cardTitle;
@@ -56,13 +53,10 @@ let randomCards = {
                         cardCost.textContent = 90;
                         cardImage.textContent = 'Mage Joe Noname';
                     }
-
                     
                 });
-
         });
     }
-
 };
 
 export default randomCards;
